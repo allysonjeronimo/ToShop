@@ -1,0 +1,52 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/lightGreen</item>
+        <item name="colorPrimaryDark">@color/darkGreen</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/AppButton</item>
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
+
+        <!--EditText hint color-->
+        <item name="android:textColorHint">@color/darkGray</item>
+        <!-- TextInputLayout text color-->
+       <!-- <item name="colorControlActivated">@color/lightGreen</item> -->
+        <!-- EditText line color when EditText on-focus-->
+        <item name="colorControlHighlight">@color/lightGray</item>
+        <!-- EditText line color when EditText  in un-focus-->
+        <item name="colorControlNormal">@color/lightGray</item>
+
+        <item name="android:itemTextAppearance">@style/TextMenuStyle</item>
+    </style>
+
+    <style name="FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/selector_button_green</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SecondaryButton">
+        <item name="android:background">@drawable/selector_button_gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+
+    <style name="TextMenuStyle" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@drawable/selector_menu_item</item>
+    </style>
+
+    <style name="MainTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

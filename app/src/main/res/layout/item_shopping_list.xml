@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="4dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginTop="6dp"
+    app:cardCornerRadius="4dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@drawable/ic_shopping_list_green"
+                android:layout_gravity="center_vertical|center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_placeholder_shopping_list"
+                    android:textColor="@color/darkGray"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="2dp"
+                    android:maxLines="1"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_check_count"
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_check_circle"
+                        app:tint="@color/lightGreen"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_check_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="0/3"
+                        android:textColor="@color/lightGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="8dp"
+                        android:layout_gravity="center_vertical" />
+
+                    <ImageView
+                        android:id="@+id/iv_total"
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_monetization"
+                        app:tint="@color/lightGreen"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="$ 0.00"
+                        android:textColor="@color/lightGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="8dp"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_status"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:max="100"
+            android:progress="100"
+            />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

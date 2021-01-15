@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="units">
+        <item>un</item>
+        <item>cx</item>
+        <item>pc</item>
+        <item>dz</item>
+        <item>m</item>
+        <item>cm</item>
+        <item>m2</item>
+        <item>cm2</item>
+        <item>kg</item>
+        <item>g</item>
+        <item>l</item>
+        <item>ml</item>
+    </string-array>
+</resources>

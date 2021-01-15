@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name" translatable="false">toShop</string>
+    <string name="device_info" translatable="false">OS Version: %s\nDevice: %s-%s\nApp Version: %s\n\n</string>
+    <string name="text_email" translatable="false">allysonjeronimo@gmail.com</string>
+    <string name="text_new_item">Add Item</string>
+    <string name="text_new_list">New List</string>
+    <!-- Actions -->
+    <string name="action_search">Search</string>
+    <string name="action_new_list">New List</string>
+    <string name="action_new_item">New Item</string>
+
+    <string name="hint_search_list">Search List</string>
+    <string name="hint_search_item">Search Item</string>
+    <string name="text_items">Items:</string>
+    <string name="text_total">Total:</string>
+    <!-- Buttons -->
+    <string name="text_save">Save</string>
+    <!-- Hint -->
+    <string name="text_shopping_list_description">List Name</string>
+    <string name="text_item_name">Item Name</string>
+    <string name="text_item_quantity">Quantity</string>
+    <string name="text_item_unit">Unit</string>
+    <string name="text_item_price">Price</string>
+    <string name="text_item_notes">Notes</string>
+    <!-- Placeholder -->
+    <string name="text_placeholder_item">New Item</string>
+    <string name="text_placeholder_item_details">1 un, $ 0,00</string>
+    <string name="text_placeholder_shopping_list">My List</string>
+    <!-- Messages -->
+    <string name="msg_empty_lists_title">No shopping lists found.</string>
+    <string name="msg_empty_lists">Create new lists on the button below.</string>
+    <string name="msg_empty_list_title">No items found.</string>
+    <string name="msg_empty_list">Create new items by typing in the field above.</string>
+    <string name="msg_error_save">Error on save.</string>
+    <string name="text_dev_name">by Allyson Jeronimo</string>
+    <string name="text_contact">Send Feedback</string>
+    <string name="text_about">About toShop</string>
+    <string name="text_send_email">Send email...</string>
+    <string name="action_delete_all">Delete All</string>
+    <string name="action_check_all">Check All</string>
+    <string name="action_uncheck_all">Uncheck All</string>
+    <string name="action_delete">Delete List</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="msg_confirm_delete_list">Do you want to delete list?</string>
+    <string name="msg_confirm_delete_items">Do you want to delete all items?</string>
+    <string name="msg_confirm_delete_lists">Do you want to delete all lists?</string>
+    <string name="msg_confirm_delete_item">Do you want to delete item?</string>
+    <string name="text_delete">Delete</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About toShop</string>
+    <string name="text_version">Version: %s</string>
+    <string name="action_rate">Rate Us</string>
+    <string name="text_add_items">Add Items</string>
+    <string name="text_move_items">Move checked items</string>
+    <string name="text_show_summary">Show summary bar</string>
+    <string name="text_screen_awake">Keep items screen awake</string>
+    <string name="text_general">General</string>
+</resources>

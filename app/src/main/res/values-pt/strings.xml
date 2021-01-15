@@ -1,0 +1,55 @@
+<resources>
+    <string name="text_new_item">Adicionar Item</string>
+    <string name="text_new_list">Nova Lista</string>
+    <!-- Actions -->
+    <string name="action_search">Buscar</string>
+    <string name="action_new_list">Nova Lista</string>
+    <string name="action_new_item">Novo Item</string>
+
+    <string name="hint_search_list">Procurar Lista</string>
+    <string name="hint_search_item">Procurar Item</string>
+    <string name="text_items">Itens:</string>
+    <string name="text_total">Total:</string>
+    <!-- Buttons -->
+    <string name="text_save">Salvar</string>
+    <!-- Hint -->
+    <string name="text_shopping_list_description">Nome da Lista</string>
+    <string name="text_item_name">Nome do Item</string>
+    <string name="text_item_quantity">Quantidade</string>
+    <string name="text_item_unit">Unidade</string>
+    <string name="text_item_price">Preço</string>
+    <string name="text_item_notes">Observações</string>
+    <!-- Placeholder -->
+    <string name="text_placeholder_item">Novo Item</string>
+    <string name="text_placeholder_item_details">1 un, $ 0,00</string>
+    <string name="text_placeholder_shopping_list">Minha Lista</string>
+    <!-- Messages -->
+    <string name="msg_empty_lists_title">Nenhuma lista encontrada.</string>
+    <string name="msg_empty_lists">Crie novas listas no botão abaixo.</string>
+    <string name="msg_empty_list_title">Nenhum item cadastrado.</string>
+    <string name="msg_empty_list">Crie novos itens digitando no campo acima.</string>
+    <string name="msg_error_save">Erro ao salvar.</string>
+    <string name="text_dev_name">por Allyson Jeronimo</string>
+    <string name="text_contact">Enviar Sugestões</string>
+    <string name="text_about">Sobre o toShop</string>
+    <string name="text_send_email">Enviar e-mail...</string>
+    <string name="action_delete_all">Excluir Tudo</string>
+    <string name="action_check_all">Marcar Tudo</string>
+    <string name="action_uncheck_all">Desmarcar Tudo</string>
+    <string name="action_delete">Excluir Lista</string>
+    <string name="text_cancel">Cancelar</string>
+    <string name="msg_confirm_delete_list">Deseja realmente excluir a lista?</string>
+    <string name="msg_confirm_delete_items">Deseja realmente excluir todos os itens?</string>
+    <string name="msg_confirm_delete_lists">Deseja realmente excluir todas as listas?</string>
+    <string name="msg_confirm_delete_item">Deseja realmente excluir o item?</string>
+    <string name="text_delete">Excluir</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_about">Sobre o toShop</string>
+    <string name="text_version">Versão: %s</string>
+    <string name="action_rate">Avalie</string>
+    <string name="text_add_items">Adicionar Itens</string>
+    <string name="text_move_items">Mover itens marcados</string>
+    <string name="text_show_summary">Mostrar barra de resumo</string>
+    <string name="text_screen_awake">Manter tela de itens ativa</string>
+    <string name="text_general">Geral</string>
+</resources>

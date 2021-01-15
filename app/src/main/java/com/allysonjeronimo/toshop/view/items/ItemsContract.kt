@@ -1,0 +1,30 @@
+package com.allysonjeronimo.toshop.view.items
+
+import com.allysonjeronimo.toshop.model.entities.Item
+import com.allysonjeronimo.toshop.model.entities.Product
+import com.allysonjeronimo.toshop.model.entities.ShoppingList
+
+interface ItemsContract {
+    interface ItemsPresenter{
+        fun searchProducts(term:String) : List<Product>
+        fun checkItem(item:Item)
+        fun loadItems(shoppingListId:Long)
+        fun deleteItem(item: Item)
+        fun saveItem(item: Item) : Boolean
+        fun deleteShoppingList(shoppingListId: Long)
+        fun deleteAll(shoppingListId:Long)
+        fun checkAll(shoppingListId:Long)
+        fun uncheckAll(shoppingListId:Long)
+    }
+    interface ItemsView{
+        fun showItems(items:List<Item>)
+        fun showItemsSummary()
+        fun deleteItem(item: Item)
+        fun deleteItems()
+        fun checkItems()
+        fun uncheckItems()
+        fun showEmptyView()
+        fun errorSaveItem()
+        fun clearInputDescription()
+    }
+}

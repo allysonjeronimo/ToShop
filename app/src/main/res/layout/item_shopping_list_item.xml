@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="4dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginTop="6dp"
+    app:cardCornerRadius="4dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        >
+
+        <View
+            android:id="@+id/view_color_state"
+            android:layout_width="6dp"
+            android:layout_height="match_parent"
+            android:background="@color/lightGray"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_item_default"
+                android:layout_gravity="center_vertical|center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_placeholder_item"
+                    android:textColor="@color/darkGray"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="2dp"
+                    android:maxLines="2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_placeholder_item_details"
+                    android:textColor="@color/lightGray"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_notes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teste"
+                    android:textColor="@color/lightGray"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cb_purchased"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:checked="false"
+                android:button="@null"
+                android:background="?android:attr/listChoiceIndicatorMultiple"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

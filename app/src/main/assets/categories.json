@@ -1,0 +1,338 @@
+[
+  {
+    "id": 1,
+    "resource_icon": "ic_item_default",
+    "names": [
+      {
+        "name": "Outras Opções",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Other Options",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "resource_icon": "ic_item_baby",
+    "names": [
+      {
+        "name": "Bebês",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Baby",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "resource_icon": "ic_item_book",
+    "names": [
+      {
+        "name": "Livros",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Books",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "resource_icon": "ic_item_bread",
+    "names": [
+      {
+        "name": "Padaria",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Bakery",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "resource_icon": "ic_item_car",
+    "names": [
+      {
+        "name": "Automotivo",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Automotive",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "resource_icon": "ic_item_cleaning",
+    "names": [
+      {
+        "name": "Produtos de Limpeza",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Cleaning Products",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "resource_icon": "ic_item_clothes",
+    "names": [
+      {
+        "name": "Roupas e Acessórios",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Fashion",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "resource_icon": "ic_item_computer",
+    "names": [
+      {
+        "name": "Eletrônicos",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Electronics",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "resource_icon": "ic_item_drink",
+    "names": [
+      {
+        "name": "Bebidas",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Drinks",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "resource_icon": "ic_item_drug",
+    "names": [
+      {
+        "name": "Farmácia",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Drugstore",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "resource_icon": "ic_item_fruit",
+    "names": [
+      {
+        "name": "Frutas e Legumes",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Fruits and Vegetables",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "resource_icon": "ic_item_games",
+    "names": [
+      {
+        "name": "Games",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Games",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "resource_icon": "ic_item_grains",
+    "names": [
+      {
+        "name": "Grãos e Cereais",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Grains",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "resource_icon": "ic_item_hygiene",
+    "names": [
+      {
+        "name": "Higiene Pessoal",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Personal Hygiene",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "resource_icon": "ic_item_meat",
+    "names": [
+      {
+        "name": "Carnes e Peixes",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Meat and Fish",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "resource_icon": "ic_item_pet",
+    "names": [
+      {
+        "name": "Pet Shop",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Pet Supplies",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "resource_icon": "ic_item_stationery",
+    "names": [
+      {
+        "name": "Papelaria",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Art and Craft",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "resource_icon": "ic_item_sweets",
+    "names": [
+      {
+        "name": "Doces",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Candies",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "resource_icon": "ic_item_tools",
+    "names": [
+      {
+        "name": "Ferramentas",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Tools",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "resource_icon": "ic_item_toys",
+    "names": [
+      {
+        "name": "Brinquedos",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Toys",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "resource_icon": "ic_item_travel",
+    "names": [
+      {
+        "name": "Viagem",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Travel",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "resource_icon": "ic_item_dairy",
+    "names": [
+      {
+        "name": "Laticínios",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Dairy",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "resource_icon": "ic_item_frozen",
+    "names": [
+      {
+        "name": "Congelados",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Frozen",
+        "locale": "en-US"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "resource_icon": "ic_item_condiments",
+    "names": [
+      {
+        "name": "Ingredientes e Temperos",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Spices and Ingredients",
+        "locale": "en-US"
+      }
+    ]
+  }
+]
