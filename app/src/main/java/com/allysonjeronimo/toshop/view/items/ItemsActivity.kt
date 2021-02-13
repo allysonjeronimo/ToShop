@@ -10,15 +10,15 @@ import android.view.WindowManager
 import androidx.core.app.NavUtils
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import com.allysonjeronimo.toshop.utils.PrefsHelper
 import com.allysonjeronimo.toshop.view.itemform.ItemFormActivity
 import kotlinx.android.synthetic.main.toolbar.*
 
 class ItemsActivity : AppCompatActivity(), ItemsFragment.OnItemClickListener, ItemsFragment.OnShoppingListDeleteListener {
 
-    private val shoppingList:ShoppingList by lazy{
+    private val shoppingList: ShoppingList by lazy{
         intent.getParcelableExtra<ShoppingList>(EXTRA_SHOPPING_LIST) as ShoppingList
     }
 
@@ -61,7 +61,7 @@ class ItemsActivity : AppCompatActivity(), ItemsFragment.OnItemClickListener, It
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
     
-    private fun showItemForm(item:Item = Item(listId = shoppingList.id)){
+    private fun showItemForm(item: Item = Item(listId = shoppingList.id)){
         ItemFormActivity.open(this, item)
     }
 

@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
-import com.allysonjeronimo.toshop.model.facade.ToShopFacadeImpl
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import com.allysonjeronimo.toshop.view.confirmdialog.ConfirmDialogFragment
 import kotlinx.android.synthetic.main.fragment_shopping_lists.*
 import org.koin.android.ext.android.inject

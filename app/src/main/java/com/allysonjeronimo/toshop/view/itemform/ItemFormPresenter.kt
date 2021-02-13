@@ -1,15 +1,14 @@
 package com.allysonjeronimo.toshop.view.itemform
 
-import com.allysonjeronimo.toshop.model.db.repositories.interfaces.ItemRepository
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.model.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
 
 class ItemFormPresenter(
     private val view: ItemFormContract.ItemFormView,
     private val facade:ToShopFacade
 ) : ItemFormContract.ItemFormPresenter{
 
-    override fun loadItem(item:Item){
+    override fun loadItem(item: Item){
         if(item.id != 0L){
             view.showItem(item)
         }

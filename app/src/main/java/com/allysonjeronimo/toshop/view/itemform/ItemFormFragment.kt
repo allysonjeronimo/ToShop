@@ -6,11 +6,8 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.model.db.repositories.ItemRepositoryImpl
-import com.allysonjeronimo.toshop.model.entities.Category
-import com.allysonjeronimo.toshop.model.facade.ToShopFacadeImpl
-import com.allysonjeronimo.toshop.utils.PrefsHelper
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Category
 import com.allysonjeronimo.toshop.utils.resourceId
 import com.allysonjeronimo.toshop.view.categories.CategoriesDialogFragment
 import com.allysonjeronimo.toshop.view.dropdownlist.DropdownListDialogFragment

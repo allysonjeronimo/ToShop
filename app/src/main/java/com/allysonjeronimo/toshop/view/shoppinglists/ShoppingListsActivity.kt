@@ -9,14 +9,12 @@ import android.os.Handler
 import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
-import android.view.WindowManager
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import com.allysonjeronimo.toshop.utils.deviceInfo
 import com.allysonjeronimo.toshop.utils.openPlayStore
 import com.allysonjeronimo.toshop.utils.sendEmail
@@ -112,7 +110,7 @@ class ShoppingListsActivity : AppCompatActivity(), ShoppingListsFragment.OnShopp
         )
     }
 
-    private fun showListForm(shoppingList:ShoppingList = ShoppingList()){
+    private fun showListForm(shoppingList: ShoppingList = ShoppingList()){
         ShoppingListFormActivity.open(this@ShoppingListsActivity, shoppingList)
     }
 

@@ -1,9 +1,9 @@
 package com.allysonjeronimo.toshop.view.items
 
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.model.entities.Product
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
-import com.allysonjeronimo.toshop.model.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
 
 class ItemsPresenter(
     private val view: ItemsContract.ItemsView,
@@ -14,7 +14,7 @@ class ItemsPresenter(
         return facade.searchProducts(term)
     }
 
-    override fun checkItem(item:Item){
+    override fun checkItem(item: Item){
         item.purchased = !item.purchased
         facade.saveItem(item)
         view.showItemsSummary()

@@ -6,20 +6,16 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import com.allysonjeronimo.toshop.utils.tintIcon
-import com.allysonjeronimo.toshop.utils.tintMenuIcon
 import com.allysonjeronimo.toshop.view.items.ItemsActivity
-import com.allysonjeronimo.toshop.view.items.ItemsFragment
 import kotlinx.android.synthetic.main.toolbar.*
 
 class ShoppingListFormActivity : AppCompatActivity(), ShoppingListFormFragment.OnShoppingListSaveListener{
 
-    private val shoppingList:ShoppingList by lazy{
+    private val shoppingList: ShoppingList by lazy{
         intent.getParcelableExtra<ShoppingList>(EXTRA_SHOPPING_LIST) as ShoppingList
     }
 
@@ -29,7 +25,7 @@ class ShoppingListFormActivity : AppCompatActivity(), ShoppingListFormFragment.O
 
     companion object{
         const val EXTRA_SHOPPING_LIST = "shopping_list"
-        fun open(context: Context, shoppingList:ShoppingList){
+        fun open(context: Context, shoppingList: ShoppingList){
             val intent = Intent(context, ShoppingListFormActivity::class.java)
             intent.putExtra(EXTRA_SHOPPING_LIST, shoppingList)
             context.startActivity(intent)
