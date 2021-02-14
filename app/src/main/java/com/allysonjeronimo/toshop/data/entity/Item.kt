@@ -2,6 +2,7 @@ package com.allysonjeronimo.toshop.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.allysonjeronimo.toshop.utils.toCurrency
 import java.util.*
@@ -21,10 +22,10 @@ data class Item(
     @ColumnInfo(name="category_id")
     var categoryId: Long = 1,
     @ColumnInfo(name="list_id")
-    var listId: Long = 0L
-    ){
-
+    var listId: Long = 0L,
+    @Ignore
     var category: Category? = null
+    ){
 
     val details:String
         get(){

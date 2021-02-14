@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.allysonjeronimo.toshop.data.entity.*
 
 @Database(
@@ -17,6 +18,7 @@ import com.allysonjeronimo.toshop.data.entity.*
     ],
     version = DB_VERSION
 )
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase(){
 
     companion object{

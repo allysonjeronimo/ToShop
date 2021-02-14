@@ -2,6 +2,7 @@ package com.allysonjeronimo.toshop.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity
@@ -9,13 +10,12 @@ data class Product (
     @PrimaryKey
     val id:Long = 0L,
     @ColumnInfo(name="category_id")
-    val categoryId: Long
-){
-
-    val name:String? = null
-    var category: Category? = null
+    val categoryId: Long,
+    @Ignore
+    var name:String?,
+    @Ignore
     var isNew:Boolean = false
-    val productNames = mutableListOf<ProductName>()
+){
 
     fun getItem(shoppingListId:Long): Item {
         return Item(
@@ -24,5 +24,6 @@ data class Product (
             listId = shoppingListId
         )
     }
+
     override fun toString(): String = name ?: ""
 }
