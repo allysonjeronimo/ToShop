@@ -12,14 +12,10 @@ class CategoryDataSource(
 ) : CategoryRepository{
 
     override suspend fun insertWithNames(categories: List<Category>) {
-        withContext(Dispatchers.IO){
-            dao.insertWithNames(categories)
-        }
+        dao.insertWithNames(categories)
     }
 
     override suspend fun findAll(locale:String): List<CategoryWithName> {
-        return withContext(Dispatchers.IO){
-            dao.findAll(locale)
-        }
+        return dao.findAll(locale)
     }
 }
