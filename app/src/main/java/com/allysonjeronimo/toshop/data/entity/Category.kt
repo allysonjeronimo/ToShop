@@ -6,11 +6,12 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity
-data class Category (
+data class Category(
     @PrimaryKey
     var id:Long = 0L,
     @ColumnInfo(name="resource_icon_name")
-    var resourceIconName:String,
+    var resourceIconName:String
+){
     @Ignore
-    var name:String?
-)
+    var categoryNames:List<CategoryName>? = null
+}

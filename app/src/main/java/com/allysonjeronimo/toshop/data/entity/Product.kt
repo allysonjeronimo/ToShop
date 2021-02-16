@@ -6,16 +6,18 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity
-data class Product (
+data class Product(
     @PrimaryKey
     val id:Long = 0L,
     @ColumnInfo(name="category_id")
-    val categoryId: Long,
+    val categoryId: Long
+){
+
     @Ignore
-    var name:String?,
+    var name:String? = null
+
     @Ignore
     var isNew:Boolean = false
-){
 
     fun getItem(shoppingListId:Long): Item {
         return Item(

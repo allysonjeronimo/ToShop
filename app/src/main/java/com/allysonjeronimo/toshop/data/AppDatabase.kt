@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.allysonjeronimo.toshop.data.dao.CategoryDao
 import com.allysonjeronimo.toshop.data.entity.*
 
 @Database(
@@ -20,6 +21,8 @@ import com.allysonjeronimo.toshop.data.entity.*
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase(){
+
+    abstract fun categoryDao(): CategoryDao
 
     companion object{
         @Volatile

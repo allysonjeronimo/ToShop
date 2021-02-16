@@ -11,6 +11,7 @@ buildscript {
         junit_version = "4.13.1"
         arch_test_version = "2.1.0"
         mockk_version = "1.10.5"
+        test_runner_version = "1.1.2"
     }
     repositories {
         google()
@@ -24,6 +25,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
     }
+
 }
 
 allprojects {
@@ -32,6 +34,8 @@ allprojects {
         jcenter()
     }
 }
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

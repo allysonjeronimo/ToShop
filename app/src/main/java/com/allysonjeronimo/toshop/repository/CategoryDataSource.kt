@@ -2,6 +2,8 @@ package com.allysonjeronimo.toshop.repository
 
 import com.allysonjeronimo.toshop.data.dao.CategoryDao
 import com.allysonjeronimo.toshop.data.entity.Category
+import com.allysonjeronimo.toshop.data.entity.CategoryName
+import com.allysonjeronimo.toshop.data.entity.CategoryWithName
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -9,7 +11,13 @@ class CategoryDataSource(
     private val dao:CategoryDao
 ) : CategoryRepository{
 
-    override suspend fun findAll(locale:String): List<Category> {
+    override suspend fun insertWithNames(categories: List<Category>) {
+        withContext(Dispatchers.IO){
+            dao.insertWithNames(categories)
+        }
+    }
+
+    override suspend fun findAll(locale:String): List<CategoryWithName> {
         return withContext(Dispatchers.IO){
             dao.findAll(locale)
         }
