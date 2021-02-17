@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.Item
 import com.allysonjeronimo.toshop.legacy.entities.Category
-import com.allysonjeronimo.toshop.utils.resourceId
+import com.allysonjeronimo.toshop.legacy.utils.resourceId
 import com.allysonjeronimo.toshop.view.categories.CategoriesDialogFragment
 import com.allysonjeronimo.toshop.view.dropdownlist.DropdownListDialogFragment
 import kotlinx.android.synthetic.main.fragment_item_form.*
@@ -89,7 +89,7 @@ class ItemFormFragment : Fragment(), ItemFormContract.ItemFormView {
         }
 
         CategoriesDialogFragment.newInstance(item.categoryId, listener)
-            .show(activity!!.supportFragmentManager, CategoriesDialogFragment.TAG)
+            .show(requireActivity().supportFragmentManager, CategoriesDialogFragment.TAG)
     }
 
     private fun showAlertDialogUnits() {
@@ -104,7 +104,7 @@ class ItemFormFragment : Fragment(), ItemFormContract.ItemFormView {
         DropdownListDialogFragment.newInstance(
             resources.getStringArray(R.array.units).toList(),
             listener
-        ).show(activity!!.supportFragmentManager, DropdownListDialogFragment.TAG)
+        ).show(requireActivity().supportFragmentManager, DropdownListDialogFragment.TAG)
     }
 
     fun saveItem() {

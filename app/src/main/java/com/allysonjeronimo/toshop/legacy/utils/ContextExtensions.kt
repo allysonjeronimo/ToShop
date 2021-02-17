@@ -1,4 +1,4 @@
-package com.allysonjeronimo.toshop.utils
+package com.allysonjeronimo.toshop.legacy.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context

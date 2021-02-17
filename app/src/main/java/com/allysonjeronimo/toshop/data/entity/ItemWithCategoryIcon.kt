@@ -1,13 +1,10 @@
 package com.allysonjeronimo.toshop.data.entity
 
 import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.allysonjeronimo.toshop.legacy.utils.toCurrency
 import java.util.*
 
-@Entity
-data class Item(
-    @PrimaryKey(autoGenerate = true)
+data class ItemWithCategoryIcon(
     var id:Long = 0L,
     var description:String? = null,
     var quantity:Double = 1.0,
@@ -15,10 +12,18 @@ data class Item(
     var price:Double = 0.0,
     var notes:String = "",
     var purchased:Boolean = false,
-    @ColumnInfo(name="last_update", defaultValue = "(datetime('now','localtime'))")
-    var lastUpdate: Date? = null,
+    @ColumnInfo(name="last_update")
+    var lastUpdate: Date,
     @ColumnInfo(name="category_id")
     var categoryId: Long = 1,
     @ColumnInfo(name="list_id")
-    var listId: Long = 0L
-    )
+    var listId: Long = 0L,
+    @ColumnInfo(name="resource_icon_name")
+    var categoryResourceIcon: String
+){
+
+    val details:String
+        get(){
+            return "$quantity $unit, ${price.toCurrency()}"
+        }
+}

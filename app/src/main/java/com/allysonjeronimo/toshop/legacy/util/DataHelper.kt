@@ -5,7 +5,7 @@ import com.allysonjeronimo.toshop.legacy.entities.Category
 import com.allysonjeronimo.toshop.legacy.entities.CategoryName
 import com.allysonjeronimo.toshop.legacy.entities.Product
 import com.allysonjeronimo.toshop.legacy.entities.ProductName
-import com.allysonjeronimo.toshop.utils.AssetsHelper
+import com.allysonjeronimo.toshop.legacy.utils.AssetsHelper
 import org.json.JSONArray
 
 class DataHelper(private val context:Context){

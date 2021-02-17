@@ -1,4 +1,4 @@
-package com.allysonjeronimo.toshop.utils
+package com.allysonjeronimo.toshop.legacy.utils
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

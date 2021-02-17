@@ -1,9 +1,6 @@
-package com.allysonjeronimo.toshop.utils
+package com.allysonjeronimo.toshop.legacy.utils
 
-import android.content.Context
-import com.allysonjeronimo.toshop.R
 import java.text.NumberFormat
-import java.text.SimpleDateFormat
 import java.util.*
 
 fun Boolean.toInt(): Int = if(this) 1 else 0

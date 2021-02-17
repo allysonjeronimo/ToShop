@@ -5,7 +5,7 @@ import android.database.Cursor
 import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
 import com.allysonjeronimo.toshop.legacy.entities.Category
 import com.allysonjeronimo.toshop.legacy.entities.CategoryName
-import com.allysonjeronimo.toshop.utils.locale
+import com.allysonjeronimo.toshop.legacy.utils.locale
 import kotlin.collections.ArrayList
 
 class CategoryRepositoryImpl(private val context: Context) : CategoryRepository {

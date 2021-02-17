@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.Item
 import com.allysonjeronimo.toshop.legacy.entities.Product
-import com.allysonjeronimo.toshop.utils.*
+import com.allysonjeronimo.toshop.legacy.utils.*
 import com.allysonjeronimo.toshop.view.confirmdialog.ConfirmDialogFragment
 import kotlinx.android.synthetic.main.fragment_items.*
 import org.koin.android.ext.android.inject

@@ -7,7 +7,7 @@ import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.Item
 import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
 import com.allysonjeronimo.toshop.legacy.entities.Category
-import com.allysonjeronimo.toshop.utils.*
+import com.allysonjeronimo.toshop.legacy.utils.*
 import java.util.*
 import kotlin.collections.ArrayList
 

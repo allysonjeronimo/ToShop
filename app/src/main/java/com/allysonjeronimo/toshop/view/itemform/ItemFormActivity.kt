@@ -9,7 +9,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.Item
-import com.allysonjeronimo.toshop.utils.tintIcon
+import com.allysonjeronimo.toshop.legacy.utils.tintIcon
 import kotlinx.android.synthetic.main.toolbar.*
 
 class ItemFormActivity : AppCompatActivity(), ItemFormFragment.OnItemSaveListener {

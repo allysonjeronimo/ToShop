@@ -6,8 +6,8 @@ import android.database.Cursor
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
 import com.allysonjeronimo.toshop.legacy.entities.Item
-import com.allysonjeronimo.toshop.utils.fromFormattedString
-import com.allysonjeronimo.toshop.utils.toFormattedString
+import com.allysonjeronimo.toshop.legacy.utils.fromFormattedString
+import com.allysonjeronimo.toshop.legacy.utils.toFormattedString
 import java.util.*
 import kotlin.collections.ArrayList
 

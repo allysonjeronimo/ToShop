@@ -11,12 +11,6 @@ data class ShoppingList(
     @PrimaryKey(autoGenerate = true)
     var id:Long = 0L,
     var description:String = "",
-    @ColumnInfo(name="last_update")
-    var lastUpdate:Date = Date(),
-    @Ignore
-    var quantityPurchasedItems:Int = 0,
-    @Ignore
-    var quantityItems:Int = 0,
-    @Ignore
-    var total:Double = 0.0,
+    @ColumnInfo(name="last_update", defaultValue = "(datetime('now','localtime'))")
+    var lastUpdate:Date? = null
 )
