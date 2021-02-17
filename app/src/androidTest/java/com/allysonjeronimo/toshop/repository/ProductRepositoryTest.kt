@@ -1,36 +1,18 @@
 package com.allysonjeronimo.toshop.repository
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.room.Room
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
 import com.allysonjeronimo.toshop.data.AppDatabase
 import com.allysonjeronimo.toshop.data.entity.Category
 import com.allysonjeronimo.toshop.data.entity.Product
 import com.allysonjeronimo.toshop.data.entity.ProductName
 import junit.framework.Assert.assertEquals
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.asExecutor
-import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
-@ExperimentalCoroutinesApi
-@RunWith(AndroidJUnit4::class)
-class ProductRepositoryTest {
+class ProductRepositoryTest : BaseRepositoryTest(){
 
-    @Rule
-    @JvmField
-    var rule = InstantTaskExecutorRule()
     private lateinit var productRepository: ProductRepository
     private lateinit var categoryRepository: CategoryRepository
-
-    private val testDispatcher = TestCoroutineDispatcher()
-    private val testScope = TestCoroutineScope(testDispatcher)
 
     @Before
     fun setup(){
@@ -43,15 +25,6 @@ class ProductRepositoryTest {
     private fun insertCategory() = testScope.runBlockingTest{
         val category = mockCategory()
         categoryRepository.insertAll(listOf(category))
-    }
-
-    private fun mockDatabase(): AppDatabase {
-        return Room.inMemoryDatabaseBuilder(
-            InstrumentationRegistry.getInstrumentation().targetContext,
-            AppDatabase::class.java)
-            .setTransactionExecutor(testDispatcher.asExecutor())
-            .setQueryExecutor(testDispatcher.asExecutor())
-            .build()
     }
 
     private fun mockCategory() : Category{
@@ -81,7 +54,6 @@ class ProductRepositoryTest {
 
     @Test
     fun insert_products_with_different_location_names() = testScope.runBlockingTest{
-
         val products = mockProducts()
 
         productRepository.insertWithNames(products)
