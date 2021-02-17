@@ -12,7 +12,7 @@ abstract class CategoryDao {
     abstract suspend fun insertAll(categories:List<Category>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertNames(categroryNames:List<CategoryName>)
+    abstract suspend fun insertNames(categoryNames:List<CategoryName>)
 
     @Query("""
         SELECT ct.id, ct.resource_icon_name, cn.name 

@@ -26,7 +26,6 @@ class CategoryRepositoryTest {
     @JvmField
     var rule = InstantTaskExecutorRule()
     private lateinit var categoryRepository: CategoryRepository
-    private lateinit var categories:List<Category>
 
     private val testDispatcher = TestCoroutineDispatcher()
     private val testScope = TestCoroutineScope(testDispatcher)
@@ -41,10 +40,18 @@ class CategoryRepositoryTest {
         val categories = mutableListOf<Category>()
         for(i in 1..3){
             val category = Category(i.toLong(), "")
-            val names = mutableListOf<CategoryName>()
-            names.add(CategoryName(locale = CATEGORY_LOCALE_PT_BR, name = "Category$i-$CATEGORY_LOCALE_PT_BR", categoryId = i.toLong()))
-            names.add(CategoryName(locale = CATEGORY_LOCALE_EN_US, name = "Category$i-$CATEGORY_LOCALE_EN_US", categoryId = i.toLong()))
-            category.categoryNames = names
+            category.categoryNames = mutableListOf(
+                CategoryName(
+                    locale = CATEGORY_LOCALE_PT_BR,
+                    name = "Category$i-$CATEGORY_LOCALE_PT_BR",
+                    categoryId = i.toLong()
+                ),
+                CategoryName(
+                    locale = CATEGORY_LOCALE_EN_US,
+                    name = "Category$i-$CATEGORY_LOCALE_EN_US",
+                    categoryId = i.toLong()
+                )
+            )
             categories.add(category)
         }
         return categories
@@ -60,9 +67,9 @@ class CategoryRepositoryTest {
     }
 
     @Test
-    fun `insert_categories_with_different_location_names`() = testScope.runBlockingTest{
+    fun insert_categories_with_different_location_names() = testScope.runBlockingTest{
         // Given
-        categories = mockCategories()
+        var categories = mockCategories()
         // When
         categoryRepository.insertWithNames(categories)
         // Then
