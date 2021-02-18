@@ -16,7 +16,7 @@ interface ShoppingListDao {
     @Query("DELETE FROM List")
     suspend fun deleteAll()
 
-    @Query("SELECT * FROM List ORDER BY id DESC")
+    @Query("SELECT l.*, 0 as quantity_items, 0 as quantity_purchased_items, 0.0 as total FROM List l ORDER BY l.id DESC")
     suspend fun findAll() : List<ShoppingListWithDetails>
 
     @Query("""

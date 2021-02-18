@@ -13,7 +13,7 @@ data class ItemWithCategoryIcon(
     var notes:String = "",
     var purchased:Boolean = false,
     @ColumnInfo(name="last_update")
-    var lastUpdate: Date,
+    var lastUpdate: Date = Date(),
     @ColumnInfo(name="category_id")
     var categoryId: Long = 1,
     @ColumnInfo(name="list_id")

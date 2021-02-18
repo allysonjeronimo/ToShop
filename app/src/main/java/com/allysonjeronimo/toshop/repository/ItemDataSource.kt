@@ -30,4 +30,8 @@ class ItemDataSource (
 
     override suspend fun countByShoppingList(shoppingListId: Long) =
         dao.countByShoppingList(shoppingListId)
+
+    override suspend fun count(): Int {
+        return dao.count()
+    }
 }

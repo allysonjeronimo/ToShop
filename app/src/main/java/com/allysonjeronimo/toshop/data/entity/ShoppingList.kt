@@ -12,5 +12,5 @@ data class ShoppingList(
     var id:Long = 0L,
     var description:String = "",
     @ColumnInfo(name="last_update", defaultValue = "(datetime('now','localtime'))")
-    var lastUpdate:Date? = null
+    var lastUpdate:Date? = Date()
 )

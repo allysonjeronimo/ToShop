@@ -7,7 +7,7 @@ data class ShoppingListWithDetails(
     var id:Long = 0L,
     var description:String = "",
     @ColumnInfo(name="last_update")
-    var lastUpdate: Date,
+    var lastUpdate: Date? = Date(),
     @ColumnInfo(name="quantity_purchased_items")
     var quantityPurchasedItems:Int = 0,
     @ColumnInfo(name="quantity_items")

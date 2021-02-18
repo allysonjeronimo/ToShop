@@ -16,4 +16,6 @@ interface ItemRepository {
     suspend fun findByShoppingList(shoppingListId: Long) : List<ItemWithCategoryIcon>
 
     suspend fun countByShoppingList(shoppingListId: Long) : Int
+
+    suspend fun count() : Int
 }

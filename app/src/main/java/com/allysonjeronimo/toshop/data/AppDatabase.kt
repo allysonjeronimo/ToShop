@@ -6,7 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.allysonjeronimo.toshop.data.dao.CategoryDao
+import com.allysonjeronimo.toshop.data.dao.ItemDao
 import com.allysonjeronimo.toshop.data.dao.ProductDao
+import com.allysonjeronimo.toshop.data.dao.ShoppingListDao
 import com.allysonjeronimo.toshop.data.entity.*
 
 @Database(
@@ -25,6 +27,8 @@ abstract class AppDatabase : RoomDatabase(){
 
     abstract fun categoryDao(): CategoryDao
     abstract fun productDao() : ProductDao
+    abstract fun shoppingListDao() : ShoppingListDao
+    abstract fun itemDao() : ItemDao
 
     companion object{
         @Volatile

@@ -33,4 +33,7 @@ interface ItemDao {
 
     @Query("SELECT Count(id) FROM Item WHERE list_id = :shoppingListId")
     suspend fun countByShoppingList(shoppingListId: Long) : Int
+
+    @Query("SELECT Count(id) FROM Item")
+    suspend fun count() : Int
 }
