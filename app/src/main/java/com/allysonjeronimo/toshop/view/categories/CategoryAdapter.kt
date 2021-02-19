@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.Category
-import com.allysonjeronimo.toshop.utils.resourceId
+import com.allysonjeronimo.toshop.legacy.entities.Category
+import com.allysonjeronimo.toshop.legacy.utils.resourceId
 import kotlinx.android.synthetic.main.item_category.view.*
 
 class CategoryAdapter(

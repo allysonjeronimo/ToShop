@@ -1,8 +1,6 @@
 package com.allysonjeronimo.toshop.view.items
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -19,11 +17,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.model.entities.Product
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
-import com.allysonjeronimo.toshop.model.facade.ToShopFacadeImpl
-import com.allysonjeronimo.toshop.utils.*
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.utils.*
 import com.allysonjeronimo.toshop.view.confirmdialog.ConfirmDialogFragment
 import kotlinx.android.synthetic.main.fragment_items.*
 import org.koin.android.ext.android.inject
@@ -286,11 +282,11 @@ class ItemsFragment : Fragment(), ItemsContract.ItemsView{
     }
 
     interface OnItemClickListener{
-        fun onClick(item:Item)
+        fun onClick(item: Item)
     }
 
     interface OnItemCheckListener{
-        fun onCheck(item:Item)
+        fun onCheck(item: Item)
     }
 
     interface OnShoppingListDeleteListener{

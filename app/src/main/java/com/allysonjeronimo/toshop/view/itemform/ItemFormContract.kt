@@ -1,10 +1,10 @@
 package com.allysonjeronimo.toshop.view.itemform
 
-import com.allysonjeronimo.toshop.model.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Item
 
 interface ItemFormContract {
     interface ItemFormPresenter{
-        fun loadItem(item:Item)
+        fun loadItem(item: Item)
         fun saveItem(item: Item) : Boolean
     }
     interface ItemFormView {

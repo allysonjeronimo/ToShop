@@ -1,16 +1,12 @@
 package com.allysonjeronimo.toshop.view.about
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.utils.deviceInfo
-import com.allysonjeronimo.toshop.utils.sendEmail
-import com.allysonjeronimo.toshop.utils.versionName
+import com.allysonjeronimo.toshop.legacy.utils.deviceInfo
+import com.allysonjeronimo.toshop.legacy.utils.sendEmail
+import com.allysonjeronimo.toshop.legacy.utils.versionName
 import kotlinx.android.synthetic.main.fragment_about.*
 
 class AboutFragment : Fragment(R.layout.fragment_about) {

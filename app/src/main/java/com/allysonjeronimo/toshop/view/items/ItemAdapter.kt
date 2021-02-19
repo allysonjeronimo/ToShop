@@ -11,9 +11,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.utils.PrefsHelper
-import com.allysonjeronimo.toshop.utils.resourceId
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.utils.resourceId
 import kotlinx.android.synthetic.main.item_shopping_list_item.view.*
 
 class ItemAdapter(
@@ -120,7 +119,7 @@ class ItemAdapter(
         }
     }
 
-    private fun removeItemFromStatusLists(item:Item){
+    private fun removeItemFromStatusLists(item: Item){
         if(item.purchased){
             this.checkedItems?.remove(item)
         }
@@ -130,7 +129,7 @@ class ItemAdapter(
         fillMainListFromStatusLists()
     }
 
-    fun deleteItem(item:Item){
+    fun deleteItem(item: Item){
         val index = this.items?.indexOfFirst { it.id == item.id }
         if(index != null){
             if(isMoveItemsToBottom){
@@ -172,14 +171,14 @@ class ItemAdapter(
         return viewHolder
     }
 
-    private fun movePosition(item:Item, currentPosition:Int, isChecked:Boolean){
+    private fun movePosition(item: Item, currentPosition:Int, isChecked:Boolean){
         if(isChecked)
             moveToBottom(item, currentPosition)
         else
             moveToTop(item, currentPosition)
     }
 
-    private fun moveToTop(item:Item, currentPosition: Int){
+    private fun moveToTop(item: Item, currentPosition: Int){
         this.checkedItems?.remove(item)
         this.uncheckedItems?.add(item)
         this.uncheckedItems?.sortBy { it.description }
@@ -189,7 +188,7 @@ class ItemAdapter(
         this.recyclerView?.scrollToPosition(currentPosition)
     }
 
-    private fun moveToBottom(item:Item, currentPosition:Int){
+    private fun moveToBottom(item: Item, currentPosition:Int){
         this.uncheckedItems?.remove(item)
         this.checkedItems?.add(item)
         this.checkedItems?.sortBy { it.description }

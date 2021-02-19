@@ -11,8 +11,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
-import com.allysonjeronimo.toshop.utils.toCurrency
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.utils.toCurrency
 import kotlinx.android.synthetic.main.item_shopping_list.view.*
 import kotlinx.android.synthetic.main.item_shopping_list.view.tv_description
 
