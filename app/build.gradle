@@ -27,6 +27,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        // Used by Room to test migrations
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation":
+                                      "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    // Used by Room to test migrations
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
 
     buildTypes {
@@ -60,6 +73,7 @@ dependencies {
     androidTestImplementation "androidx.arch.core:core-testing:$arch_test_version"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
 
     // Apache Commons Lang
     implementation 'org.apache.commons:commons-text:1.7'

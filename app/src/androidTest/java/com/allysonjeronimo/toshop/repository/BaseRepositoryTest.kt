@@ -9,6 +9,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.asExecutor
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.TestCoroutineScope
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.runner.RunWith
 
@@ -21,8 +23,19 @@ open class BaseRepositoryTest {
     var rule = InstantTaskExecutorRule()
     private val testDispatcher = TestCoroutineDispatcher()
     val testScope = TestCoroutineScope(testDispatcher)
+    lateinit var db:AppDatabase
 
-    fun mockDatabase() : AppDatabase {
+    @Before
+    fun initDatabase(){
+        db = mockDatabase()
+    }
+
+    @After
+    fun closeDatabase(){
+        db.close()
+    }
+
+    private fun mockDatabase() : AppDatabase {
         return Room.inMemoryDatabaseBuilder(
             InstrumentationRegistry.getInstrumentation().targetContext,
             AppDatabase::class.java)

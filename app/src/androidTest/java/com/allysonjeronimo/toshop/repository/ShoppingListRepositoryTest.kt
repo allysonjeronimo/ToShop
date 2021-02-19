@@ -14,7 +14,6 @@ class ShoppingListRepositoryTest : BaseRepositoryTest() {
 
     @Before
     fun setup(){
-        val db = mockDatabase()
         shoppingListRepository = ShoppingListDataSource(db.shoppingListDao())
         itemRepository = ItemDataSource(db.itemDao())
     }

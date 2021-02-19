@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Category(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id:Long = 0L,
     @ColumnInfo(name="resource_icon_name")
     var resourceIconName:String

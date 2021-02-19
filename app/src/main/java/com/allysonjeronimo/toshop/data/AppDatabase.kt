@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.allysonjeronimo.toshop.data.dao.CategoryDao
 import com.allysonjeronimo.toshop.data.dao.ItemDao
 import com.allysonjeronimo.toshop.data.dao.ProductDao
@@ -42,10 +44,12 @@ abstract class AppDatabase : RoomDatabase(){
                         context,
                         AppDatabase::class.java,
                         DB_NAME
-                    ).build()
+                    ).addMigrations(MIGRATION_1_2).build()
                 }
                 return instance
             }
         }
     }
+
+
 }

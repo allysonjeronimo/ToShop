@@ -14,7 +14,6 @@ class CategoryRepositoryTest : BaseRepositoryTest(){
 
     @Before
     fun setup(){
-        val db = mockDatabase()
         categoryRepository = CategoryDataSource(db.categoryDao())
     }
 
