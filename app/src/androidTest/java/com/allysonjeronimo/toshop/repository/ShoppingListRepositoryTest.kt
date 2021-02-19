@@ -89,7 +89,7 @@ class ShoppingListRepositoryTest : BaseRepositoryTest() {
     }
 
     @Test
-    fun delete_shopping_list() = testScope.runBlockingTest {
+    fun delete_empty_shopping_list() = testScope.runBlockingTest {
         saveShoppingList()
 
         var results = shoppingListRepository.search("")
@@ -101,6 +101,28 @@ class ShoppingListRepositoryTest : BaseRepositoryTest() {
         results = shoppingListRepository.search("")
 
         assertEquals(0, results.size)
+    }
+
+    @Test
+    fun delete_shopping_list_with_items() = testScope.runBlockingTest {
+        saveShoppingList()
+
+        var results = shoppingListRepository.search("")
+
+        assertEquals(1, results.size)
+
+        val item = mockItem(false, results[0].id)
+
+        itemRepository.save(item)
+
+        assertEquals(1, itemRepository.countByShoppingList(item.listId))
+
+        shoppingListRepository.delete(results[0].id)
+
+        results = shoppingListRepository.search("")
+
+        assertEquals(0, results.size)
+        assertEquals(0, itemRepository.countByShoppingList(item.listId))
     }
 
     companion object{
