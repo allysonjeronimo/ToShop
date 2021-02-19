@@ -6,11 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
-import com.allysonjeronimo.toshop.model.facade.ToShopFacadeImpl
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import kotlinx.android.synthetic.main.fragment_shopping_list_form.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
@@ -21,7 +19,7 @@ class ShoppingListFormFragment() : Fragment(), ShoppingListFormContract.Shopping
         parametersOf(this)
     }
 
-    private val shoppingList:ShoppingList by lazy{
+    private val shoppingList: ShoppingList by lazy{
         arguments?.getParcelable<ShoppingList>(EXTRA_SHOPPING_LIST) as ShoppingList
     }
 
@@ -29,7 +27,7 @@ class ShoppingListFormFragment() : Fragment(), ShoppingListFormContract.Shopping
         const val TAG = "ListFormFragment"
         const val EXTRA_SHOPPING_LIST = "shopping_list"
 
-        fun newInstance(shoppingList:ShoppingList) : ShoppingListFormFragment {
+        fun newInstance(shoppingList: ShoppingList) : ShoppingListFormFragment {
             val instance = ShoppingListFormFragment()
             instance.arguments = Bundle().apply{
                 putParcelable(EXTRA_SHOPPING_LIST, shoppingList)

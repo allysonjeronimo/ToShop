@@ -1,7 +1,7 @@
 package com.allysonjeronimo.toshop.di
 
-import com.allysonjeronimo.toshop.model.facade.ToShopFacadeImpl
-import com.allysonjeronimo.toshop.model.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.facade.ToShopFacadeImpl
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
 import com.allysonjeronimo.toshop.view.categories.CategoriesDialogContract
 import com.allysonjeronimo.toshop.view.categories.CategoriesDialogPresenter
 import com.allysonjeronimo.toshop.view.itemform.ItemFormContract

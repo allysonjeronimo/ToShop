@@ -1,14 +1,14 @@
 package com.allysonjeronimo.toshop.view.shoppinglists
 
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
-import com.allysonjeronimo.toshop.model.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
 
 class ShoppingListsPresenter (
     private val view: ShoppingListsContract.ShoppingListsView,
     private val facade: ToShopFacade
 ) : ShoppingListsContract.ShoppingListsPresenter{
 
-    override fun deleteShoppingList(shoppingList:ShoppingList){
+    override fun deleteShoppingList(shoppingList: ShoppingList){
         facade.deleteShoppingList(shoppingList)
 
         if(facade.countShoppingLists() > 0){

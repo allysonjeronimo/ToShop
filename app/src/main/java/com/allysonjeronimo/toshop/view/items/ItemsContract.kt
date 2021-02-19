@@ -1,13 +1,12 @@
 package com.allysonjeronimo.toshop.view.items
 
-import com.allysonjeronimo.toshop.model.entities.Item
-import com.allysonjeronimo.toshop.model.entities.Product
-import com.allysonjeronimo.toshop.model.entities.ShoppingList
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
 
 interface ItemsContract {
     interface ItemsPresenter{
         fun searchProducts(term:String) : List<Product>
-        fun checkItem(item:Item)
+        fun checkItem(item: Item)
         fun loadItems(shoppingListId:Long)
         fun deleteItem(item: Item)
         fun saveItem(item: Item) : Boolean

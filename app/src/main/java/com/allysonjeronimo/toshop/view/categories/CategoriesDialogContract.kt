@@ -1,6 +1,6 @@
 package com.allysonjeronimo.toshop.view.categories
 
-import com.allysonjeronimo.toshop.model.entities.Category
+import com.allysonjeronimo.toshop.legacy.entities.Category
 
 interface CategoriesDialogContract {
     interface CategoriesDialogPresenter{

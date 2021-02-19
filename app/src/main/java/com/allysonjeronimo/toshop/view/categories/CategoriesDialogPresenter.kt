@@ -1,6 +1,6 @@
 package com.allysonjeronimo.toshop.view.categories
 
-import com.allysonjeronimo.toshop.model.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
 
 class CategoriesDialogPresenter (
     private val view: CategoriesDialogContract.CategoriesDialogView,
