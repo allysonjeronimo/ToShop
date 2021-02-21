@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "6609129e86c0eff728172696b6eb2eb3",
+    "identityHash": "3647c0d10c2dc6d35b709bc8c03eb4bc",
     "entities": [
       {
         "tableName": "Category",
@@ -70,7 +70,7 @@
       },
       {
         "tableName": "Item",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `description` TEXT NOT NULL, `quantity` REAL DEFAULT 1, `unit` TEXT DEFAULT 'UN', `price` REAL NOT NULL DEFAULT 0.0, `notes` TEXT NOT NULL, `purchased` INTEGER NOT NULL DEFAULT 0, `last_update` TEXT DEFAULT CURRENT_TIMESTAMP, `category_id` INTEGER NOT NULL DEFAULT 1, `list_id` INTEGER NOT NULL, FOREIGN KEY(`list_id`) REFERENCES `List`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `description` TEXT NOT NULL, `quantity` REAL NOT NULL DEFAULT 1, `unit` TEXT DEFAULT 'UN', `price` REAL NOT NULL DEFAULT 0.0, `notes` TEXT, `purchased` INTEGER NOT NULL DEFAULT 0, `last_update` TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, `category_id` INTEGER NOT NULL DEFAULT 1, `list_id` INTEGER NOT NULL, FOREIGN KEY(`list_id`) REFERENCES `List`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -88,7 +88,7 @@
             "fieldPath": "quantity",
             "columnName": "quantity",
             "affinity": "REAL",
-            "notNull": false,
+            "notNull": true,
             "defaultValue": "1"
           },
           {
@@ -109,7 +109,7 @@
             "fieldPath": "notes",
             "columnName": "notes",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "purchased",
@@ -122,7 +122,7 @@
             "fieldPath": "lastUpdate",
             "columnName": "last_update",
             "affinity": "TEXT",
-            "notNull": false,
+            "notNull": true,
             "defaultValue": "CURRENT_TIMESTAMP"
           },
           {
@@ -226,7 +226,7 @@
       },
       {
         "tableName": "List",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `description` TEXT NOT NULL, `last_update` TEXT DEFAULT (datetime('now','localtime')))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `description` TEXT NOT NULL, `last_update` TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)",
         "fields": [
           {
             "fieldPath": "id",
@@ -244,8 +244,8 @@
             "fieldPath": "lastUpdate",
             "columnName": "last_update",
             "affinity": "TEXT",
-            "notNull": false,
-            "defaultValue": "(datetime('now','localtime'))"
+            "notNull": true,
+            "defaultValue": "CURRENT_TIMESTAMP"
           }
         ],
         "primaryKey": {
@@ -261,7 +261,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6609129e86c0eff728172696b6eb2eb3')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3647c0d10c2dc6d35b709bc8c03eb4bc')"
     ]
   }
 }

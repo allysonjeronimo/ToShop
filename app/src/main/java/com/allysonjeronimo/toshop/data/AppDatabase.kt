@@ -44,7 +44,14 @@ abstract class AppDatabase : RoomDatabase(){
                         context,
                         AppDatabase::class.java,
                         DB_NAME
-                    ).addMigrations(MIGRATION_1_2).build()
+                    ).addMigrations(MIGRATION_1_2)
+                        .addCallback(object:Callback(){
+                            override fun onCreate(db: SupportSQLiteDatabase) {
+                                super.onCreate(db)
+                                DataHelper.getInstance(context).initDatabase(db)
+                            }
+                        })
+                        .build()
                 }
                 return instance
             }

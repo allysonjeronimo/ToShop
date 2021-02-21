@@ -1,9 +1,12 @@
 package com.allysonjeronimo.toshop.data.entity
 
+import androidx.annotation.NonNull
+import androidx.annotation.Nullable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
+import androidx.room.ForeignKey.SET_DEFAULT
 import androidx.room.PrimaryKey
 import java.util.*
 
@@ -22,16 +25,16 @@ data class Item(
     var id:Long = 0L,
     var description:String,
     @ColumnInfo(defaultValue = "1")
-    var quantity:Double? = 1.0,
+    var quantity:Double = 1.0,
     @ColumnInfo(defaultValue = "UN")
     var unit:String? = null,
     @ColumnInfo(defaultValue = "0.0")
     var price:Double = 0.0,
-    var notes:String = "",
+    var notes:String? = "",
     @ColumnInfo(defaultValue = "0")
     var purchased:Boolean = false,
     @ColumnInfo(name="last_update", defaultValue = "CURRENT_TIMESTAMP")
-    var lastUpdate: Date? = Date(),
+    var lastUpdate: Date = Date(),
     @ColumnInfo(name="category_id", defaultValue = "1")
     var categoryId: Long = 1,
     @ColumnInfo(name="list_id")

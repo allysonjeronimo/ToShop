@@ -6,15 +6,15 @@ import com.allysonjeronimo.toshop.legacy.entities.*
 import com.allysonjeronimo.toshop.legacy.utils.AssetsHelper
 import org.json.JSONArray
 
-class DataHelper(private val context:Context){
+class SQLiteDataHelper(private val context:Context){
 
     companion object{
 
-        private var instance: DataHelper? = null
+        private var instance: SQLiteDataHelper? = null
 
-        fun getInstance(context: Context) : DataHelper {
+        fun getInstance(context: Context) : SQLiteDataHelper {
             if(instance == null)
-                instance = DataHelper(context)
+                instance = SQLiteDataHelper(context)
             return instance!!
         }
 
@@ -63,18 +63,18 @@ class DataHelper(private val context:Context){
         )
 
         const val INSERT_CATEGORY_TEMPLATE =
-            "INSERT INTO ${Category.TABLE_NAME} (${Category.COLUMN_ID}, ${Category.COLUMN_RESOURCE_ICON_NAME}) VALUES (%d, '%s')"
+            "INSERT INTO Category (id, resource_icon_name) VALUES (%d, '%s')"
 
         const val INSERT_CATEGORY_NAME_TEMPLATE =
-            "INSERT INTO ${CategoryName.TABLE_NAME} " +
-                    "(${CategoryName.COLUMN_NAME},${CategoryName.COLUMN_LOCALE},${CategoryName.FK_COLUMN_CATEGORY_ID}) " +
+            "INSERT INTO CategoryName " +
+                    "(name, locale, category_id) " +
                     "VALUES ('%s', '%s', %d)"
 
         const val INSERT_PRODUCT_TEMPLATE =
-            "INSERT INTO ${Product.TABLE_NAME} (${Product.COLUMN_ID}, ${Product.FK_COLUMN_CATEGORY_ID}) VALUES (%d, %d)"
+            "INSERT INTO Product (id, category_id) VALUES (%d, %d)"
 
         const val INSERT_PRODUCT_NAME_TEMPLATE =
-            "INSERT INTO ${ProductName.TABLE_NAME} (${ProductName.COLUMN_NAME},${ProductName.COLUMN_LOCALE},${ProductName.FK_COLUMN_PRODUCT_ID}) " +
+            "INSERT INTO ProductName (name, locale, product_id) " +
                     "VALUES ('%s', '%s', %d)"
 
         const val DELETE_TEMPLATE =
@@ -143,7 +143,7 @@ class DataHelper(private val context:Context){
     }
 
     private fun insertCategories(db: SQLiteDatabase){
-        val categories = DataHelper.getInstance(context).getCategories()
+        val categories = SQLiteDataHelper.getInstance(context).getCategories()
         categories.forEach { category ->
 
             db.execSQL(
@@ -161,7 +161,7 @@ class DataHelper(private val context:Context){
     }
 
     private fun insertProducts(db: SQLiteDatabase){
-        val products = DataHelper.getInstance(context).getProducts()
+        val products = SQLiteDataHelper.getInstance(context).getProducts()
         products.forEach { product ->
             db.execSQL(
                 INSERT_PRODUCT_TEMPLATE.format(

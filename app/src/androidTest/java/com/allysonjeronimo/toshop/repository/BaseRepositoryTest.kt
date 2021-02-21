@@ -2,9 +2,12 @@ package com.allysonjeronimo.toshop.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.allysonjeronimo.toshop.data.AppDatabase
+import com.allysonjeronimo.toshop.data.DataHelper
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.asExecutor
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -41,6 +44,12 @@ open class BaseRepositoryTest {
             AppDatabase::class.java)
             .setTransactionExecutor(testDispatcher.asExecutor())
             .setQueryExecutor(testDispatcher.asExecutor())
+            .addCallback(object:RoomDatabase.Callback(){
+                override fun onCreate(db: SupportSQLiteDatabase) {
+                    super.onCreate(db)
+                    DataHelper.getInstance( InstrumentationRegistry.getInstrumentation().targetContext).initDatabase(db)
+                }
+            })
             .build()
     }
 }

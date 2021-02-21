@@ -1,14 +1,11 @@
 package com.allysonjeronimo.toshop.data
 
-import android.database.sqlite.SQLiteDatabase
 import androidx.room.testing.MigrationTestHelper
-import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.allysonjeronimo.toshop.legacy.util.DataHelper
-import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
+import com.allysonjeronimo.toshop.legacy.util.SQLiteDataHelper
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -36,7 +33,7 @@ class MigrationsTest {
                 TEST_DB_NAME
             )
             val db = sqliteDatabaseHelper.writableDatabase
-            DataHelper.getInstance(
+            SQLiteDataHelper.getInstance(
                 ApplicationProvider.getApplicationContext()
             ).initDatabase(db)
             db.close()
@@ -48,7 +45,7 @@ class MigrationsTest {
     @After
     fun clearDatabase(){
         val db = sqliteDatabaseHelper.writableDatabase
-        DataHelper.getInstance(
+        SQLiteDataHelper.getInstance(
             ApplicationProvider.getApplicationContext()
         ).clearDatabase(db)
         db.close()

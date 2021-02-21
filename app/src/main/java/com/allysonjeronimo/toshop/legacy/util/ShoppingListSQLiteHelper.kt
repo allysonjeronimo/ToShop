@@ -3,8 +3,6 @@ package com.allysonjeronimo.toshop.legacy.util
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.allysonjeronimo.toshop.legacy.entities.*
-import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 
 class ShoppingListSQLiteHelper(
     private val context:Context
@@ -23,7 +21,7 @@ class ShoppingListSQLiteHelper(
     }
 
     fun clear(db:SQLiteDatabase){
-        DataHelper.getInstance(context).clearDatabase(db)
+        SQLiteDataHelper.getInstance(context).clearDatabase(db)
     }
 
     override fun onOpen(db: SQLiteDatabase) {
@@ -32,7 +30,7 @@ class ShoppingListSQLiteHelper(
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        DataHelper.getInstance(context).initDatabase(db)
+        SQLiteDataHelper.getInstance(context).initDatabase(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
