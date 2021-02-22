@@ -1,10 +1,10 @@
 package com.allysonjeronimo.toshop.repository
 
-import com.allysonjeronimo.toshop.data.AppDatabase
 import com.allysonjeronimo.toshop.data.entity.Category
 import com.allysonjeronimo.toshop.data.entity.Product
 import com.allysonjeronimo.toshop.data.entity.ProductName
 import junit.framework.Assert.assertEquals
+import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
@@ -61,6 +61,13 @@ class ProductRepositoryTest : BaseRepositoryTest(){
         assertEquals(products.size, insertedProducts.size)
         insertedProducts = productRepository.search("Product", PRODUCT_LOCALE_EN_US)
         assertEquals(products.size, insertedProducts.size)
+    }
+
+    @Test
+    fun insert_default_products_on_create() = testScope.runBlockingTest{
+        val productsPtBR = productRepository.search("", PRODUCT_LOCALE_PT_BR)
+
+        assertTrue(productsPtBR.isNotEmpty())
     }
 
     companion object{

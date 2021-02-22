@@ -3,6 +3,7 @@ package com.allysonjeronimo.toshop.repository
 import com.allysonjeronimo.toshop.data.entity.Category
 import com.allysonjeronimo.toshop.data.entity.CategoryName
 import junit.framework.Assert.assertEquals
+import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
@@ -49,6 +50,15 @@ class CategoryRepositoryTest : BaseRepositoryTest(){
         assertEquals(categories.size, insertedCategories.size)
         insertedCategories = categoryRepository.findAll(CATEGORY_LOCALE_EN_US)
         assertEquals(categories.size, insertedCategories.size)
+    }
+
+    @Test
+    fun insert_default_categories_on_create() = testScope.runBlockingTest{
+        val categoriesPtBR = categoryRepository.findAll(CATEGORY_LOCALE_PT_BR)
+        val categoriesEnUS = categoryRepository.findAll(CATEGORY_LOCALE_EN_US)
+
+        assertTrue(categoriesPtBR.isNotEmpty())
+        assertTrue(categoriesEnUS.isNotEmpty())
     }
 
     companion object{

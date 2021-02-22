@@ -39,8 +39,10 @@ class DataHelper(
     }
 
     fun initDatabase(db: SupportSQLiteDatabase){
-        if(!existsData(db)){
+        if(!hasCategoryData(db)){
             insertCategories(db)
+        }
+        if(!hasProductData(db)){
             insertProducts(db)
         }
     }
@@ -123,10 +125,21 @@ class DataHelper(
         }
     }
 
-    private fun existsData(db: SupportSQLiteDatabase) : Boolean{
+    private fun hasCategoryData(db: SupportSQLiteDatabase) : Boolean{
         val cursor = db.query("SELECT Count(*) FROM Category")
-        val exists = cursor.count > 0
+        var result = 0
+        if(cursor.moveToFirst())
+            result = cursor.getInt(0)
         cursor.close()
-        return exists
+        return result > 0
+    }
+
+    private fun hasProductData(db: SupportSQLiteDatabase) : Boolean{
+        val cursor = db.query("SELECT Count(*) FROM Product")
+        var result = 0
+        if(cursor.moveToFirst())
+            result = cursor.getInt(0)
+        cursor.close()
+        return result > 0
     }
 }
