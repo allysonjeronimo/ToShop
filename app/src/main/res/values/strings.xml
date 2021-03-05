@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">toShop</string>
     <string name="device_info" translatable="false">OS Version: %s\nDevice: %s-%s\nApp Version: %s\n\n</string>
     <string name="text_email" translatable="false">allysonjeronimo@gmail.com</string>
+    <string name="preferences_key" translatable="false">com.allysonjeronimo.toshop_preferences</string>
     <string name="text_new_item">Add Item</string>
     <string name="text_new_list">New List</string>
     <!-- Actions -->

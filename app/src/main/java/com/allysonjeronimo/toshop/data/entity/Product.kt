@@ -13,5 +13,5 @@ data class Product(
     val categoryId: Long
 ){
     @Ignore
-    var productNames:List<ProductName>? = null
+    var productNames = mutableListOf<ProductName>()
 }

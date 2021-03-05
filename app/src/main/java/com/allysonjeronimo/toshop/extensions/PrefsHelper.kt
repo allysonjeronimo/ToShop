@@ -1,26 +1,29 @@
-package com.allysonjeronimo.toshop.legacy.utils
+package com.allysonjeronimo.toshop.extensions
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.preference.PreferenceManager
+import com.allysonjeronimo.toshop.R
 
 class PrefsHelper(
-    private val context: Context){
+    context: Context){
 
     private var sharedPreferences:SharedPreferences? = null
 
     init{
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        sharedPreferences = context
+            .getSharedPreferences(
+                context.getString(R.string.preferences_key),
+                Context.MODE_PRIVATE)
     }
 
     companion object{
-        private var instance:PrefsHelper? = null
+        private var instance: PrefsHelper? = null
 
-        const val KEY_MOVE_ITENS = "move_items"
+        const val KEY_MOVE_ITEMS = "move_items"
         const val KEY_SHOW_SUMMARY = "show_summary"
         const val KEY_SCREEN_AWAKE = "screen_awake"
 
-        fun getInstance(context:Context) : PrefsHelper{
+        fun getInstance(context:Context) : PrefsHelper {
             if(instance == null)
                 instance = PrefsHelper(context)
             return instance!!

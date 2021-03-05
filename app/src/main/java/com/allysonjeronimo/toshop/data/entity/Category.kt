@@ -13,5 +13,5 @@ data class Category(
     var resourceIconName:String
 ){
     @Ignore
-    var categoryNames:List<CategoryName>? = null
+    var categoryNames = mutableListOf<CategoryName>()
 }

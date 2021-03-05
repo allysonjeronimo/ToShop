@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
+import com.allysonjeronimo.toshop.extensions.PrefsHelper
 import com.allysonjeronimo.toshop.legacy.entities.Item
 import com.allysonjeronimo.toshop.legacy.entities.Product
 import com.allysonjeronimo.toshop.legacy.utils.*
@@ -59,7 +60,7 @@ class ItemsFragment : Fragment(), ItemsContract.ItemsView{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        shoppingListId = arguments!!.getLong(EXTRA_SHOPPING_LIST_ID, 0L)
+        shoppingListId = requireArguments().getLong(EXTRA_SHOPPING_LIST_ID, 0L)
         initRecyclerView()
         initAutoCompleteTextView()
     }
@@ -183,7 +184,7 @@ class ItemsFragment : Fragment(), ItemsContract.ItemsView{
 
         adapter.isMoveItemsToBottom =
             PrefsHelper.getInstance(requireContext())
-                .getBooleanValue(PrefsHelper.KEY_MOVE_ITENS)
+                .getBooleanValue(PrefsHelper.KEY_MOVE_ITEMS)
 
         isShowSummaryBar = PrefsHelper.getInstance(requireContext()).getBooleanValue(PrefsHelper.KEY_SHOW_SUMMARY)
         view_summary.visibility = if(isShowSummaryBar) View.VISIBLE else View.GONE
@@ -254,7 +255,7 @@ class ItemsFragment : Fragment(), ItemsContract.ItemsView{
             }
         }
         ConfirmDialogFragment.newInstance(getString(R.string.text_delete), getString(R.string.msg_confirm_delete_items), listener)
-            .show(activity!!.supportFragmentManager, ConfirmDialogFragment.TAG)
+            .show(requireActivity().supportFragmentManager, ConfirmDialogFragment.TAG)
     }
 
     fun deleteShoppingList(shoppingListId:Long){

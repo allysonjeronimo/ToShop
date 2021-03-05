@@ -92,7 +92,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     // Preference Screen
-    implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation 'androidx.preference:preference:1.1.1'
     // Koin
     implementation 'org.koin:koin-android:1.0.1'
     implementation 'org.koin:koin-androidx-scope:1.0.0'

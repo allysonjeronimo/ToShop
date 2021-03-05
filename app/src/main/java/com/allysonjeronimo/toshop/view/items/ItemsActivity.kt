@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.Item
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
-import com.allysonjeronimo.toshop.legacy.utils.PrefsHelper
+import com.allysonjeronimo.toshop.extensions.PrefsHelper
 import com.allysonjeronimo.toshop.view.itemform.ItemFormActivity
 import kotlinx.android.synthetic.main.toolbar.*
 

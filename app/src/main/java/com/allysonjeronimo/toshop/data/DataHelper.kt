@@ -2,17 +2,20 @@ package com.allysonjeronimo.toshop.data
 
 import android.content.Context
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.allysonjeronimo.toshop.legacy.entities.Category
-import com.allysonjeronimo.toshop.legacy.entities.CategoryName
-import com.allysonjeronimo.toshop.legacy.entities.Product
-import com.allysonjeronimo.toshop.legacy.entities.ProductName
-import com.allysonjeronimo.toshop.legacy.utils.AssetsHelper
+import com.allysonjeronimo.toshop.data.entity.Category
+import com.allysonjeronimo.toshop.data.entity.CategoryName
+import com.allysonjeronimo.toshop.data.entity.Product
+import com.allysonjeronimo.toshop.data.entity.ProductName
+import com.allysonjeronimo.toshop.extensions.loadFileFromAssets
 import org.json.JSONArray
 
 class DataHelper(
     private val context: Context)
 {
     companion object{
+
+        const val FILE_CATEGORIES = "categories.json"
+        const val FILE_PRODUCTS = "products.json"
 
         private var instance: DataHelper? = null
 
@@ -48,7 +51,7 @@ class DataHelper(
     }
 
     private fun getCategories() : List<Category>{
-        val categoriesJson = AssetsHelper.getInstance(context).loadJSON(AssetsHelper.FILE_CATEGORIES)
+        val categoriesJson = context.loadFileFromAssets(FILE_CATEGORIES)
         val categoriesArray = JSONArray(categoriesJson)
         val categories = mutableListOf<Category>()
         for(i in 0 until categoriesArray.length()){
@@ -70,7 +73,7 @@ class DataHelper(
     }
 
     private fun getProducts() : List<Product>{
-        val productsJson = AssetsHelper.getInstance(context).loadJSON(AssetsHelper.FILE_PRODUCTS)
+        val productsJson = context.loadFileFromAssets(FILE_PRODUCTS)
         val productsArray = JSONArray(productsJson)
         val products = mutableListOf<Product>()
         for(i in 0 until productsArray.length()){
