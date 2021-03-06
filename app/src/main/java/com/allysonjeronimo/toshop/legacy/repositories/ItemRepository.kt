@@ -1,6 +1,6 @@
 package com.allysonjeronimo.toshop.legacy.repositories
 
-import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.data.legacy.entities.Item
 
 interface ItemRepository {
 

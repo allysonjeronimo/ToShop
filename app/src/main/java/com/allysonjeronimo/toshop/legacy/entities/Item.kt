@@ -1,6 +1,7 @@
 package com.allysonjeronimo.toshop.legacy.entities
 
 import android.os.Parcelable
+import com.allysonjeronimo.toshop.data.legacy.entities.Category
 import com.allysonjeronimo.toshop.legacy.utils.toCurrency
 import kotlinx.android.parcel.Parcelize
 import java.util.*

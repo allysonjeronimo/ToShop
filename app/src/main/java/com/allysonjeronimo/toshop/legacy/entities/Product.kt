@@ -1,5 +1,9 @@
 package com.allysonjeronimo.toshop.legacy.entities
 
+import com.allysonjeronimo.toshop.data.legacy.entities.Category
+import com.allysonjeronimo.toshop.data.legacy.entities.Item
+import com.allysonjeronimo.toshop.data.legacy.entities.ProductName
+
 data class Product (
     val id:Long = 0L,
     val categoryId: Long,

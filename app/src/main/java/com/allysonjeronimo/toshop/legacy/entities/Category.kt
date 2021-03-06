@@ -1,6 +1,7 @@
 package com.allysonjeronimo.toshop.legacy.entities
 
 import android.os.Parcelable
+import com.allysonjeronimo.toshop.data.legacy.entities.CategoryName
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 

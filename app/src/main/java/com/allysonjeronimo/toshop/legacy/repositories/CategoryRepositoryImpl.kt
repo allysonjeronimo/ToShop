@@ -3,8 +3,9 @@ package com.allysonjeronimo.toshop.legacy.repositories
 import android.content.Context
 import android.database.Cursor
 import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
-import com.allysonjeronimo.toshop.legacy.entities.Category
-import com.allysonjeronimo.toshop.legacy.entities.CategoryName
+import com.allysonjeronimo.toshop.data.legacy.entities.Category
+import com.allysonjeronimo.toshop.data.legacy.entities.CategoryName
+import com.allysonjeronimo.toshop.data.legacy.repositories.CategoryRepository
 import com.allysonjeronimo.toshop.legacy.utils.locale
 import kotlin.collections.ArrayList
 
