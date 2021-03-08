@@ -1,9 +1,9 @@
 package com.allysonjeronimo.toshop.ui.items
 
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
-import com.allysonjeronimo.toshop.data.legacy.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
 
 class ItemsPresenter(
     private val view: ItemsContract.ItemsView,

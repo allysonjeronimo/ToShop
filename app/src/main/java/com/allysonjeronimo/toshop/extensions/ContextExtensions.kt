@@ -1,4 +1,4 @@
-package com.allysonjeronimo.toshop.legacy.utils
+package com.allysonjeronimo.toshop.extensions
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -13,19 +13,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import com.allysonjeronimo.toshop.R
-import java.util.*
-
-
-fun Context.locale() : String {
-    val locales = this.resources.getStringArray(R.array.locales)
-    val currentLocale = "${Locale.getDefault().language}-${Locale.getDefault().country}"
-    return if(!locales.contains(currentLocale)){
-        locales[0]
-    }
-    else{
-        currentLocale
-    }
-}
 
 fun Context.hideKeyboard(view: View){
     val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -91,7 +78,7 @@ fun Context.tintMenuIcon(item: MenuItem, @ColorRes color: Int){
 }
 
 fun Context.color(resourceColor: Int) : Int{
-   return ContextCompat.getColor(this, resourceColor)
+    return ContextCompat.getColor(this, resourceColor)
 }
 
 fun Context.drawable(resourceDrawable: Int) : Drawable?{

@@ -1,5 +1,4 @@
 include ':common'
-include ':presentation'
 include ':data'
 include ':app'
 rootProject.name = "Shopping List"

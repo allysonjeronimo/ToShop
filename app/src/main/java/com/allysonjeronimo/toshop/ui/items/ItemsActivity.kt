@@ -10,7 +10,7 @@ import android.view.WindowManager
 import androidx.core.app.NavUtils
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Item
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 import com.allysonjeronimo.toshop.extensions.PrefsHelper
 import com.allysonjeronimo.toshop.ui.itemform.ItemFormActivity

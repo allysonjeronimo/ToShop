@@ -1,15 +1,15 @@
 package com.allysonjeronimo.toshop.legacy.facade
 
 import android.content.Context
-import com.allysonjeronimo.toshop.data.legacy.repositories.CategoryRepositoryImpl
-import com.allysonjeronimo.toshop.data.legacy.repositories.ItemRepositoryImpl
-import com.allysonjeronimo.toshop.data.legacy.repositories.ProductRepositoryImpl
-import com.allysonjeronimo.toshop.data.legacy.repositories.ShoppingListRepositoryImpl
-import com.allysonjeronimo.toshop.data.legacy.entities.Category
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.entities.Category
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
-import com.allysonjeronimo.toshop.data.legacy.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
+import com.allysonjeronimo.toshop.legacy.repositories.CategoryRepositoryImpl
+import com.allysonjeronimo.toshop.legacy.repositories.ItemRepositoryImpl
+import com.allysonjeronimo.toshop.legacy.repositories.ProductRepositoryImpl
+import com.allysonjeronimo.toshop.legacy.repositories.ShoppingListRepositoryImpl
 
 class ToShopFacadeImpl(context: Context) : ToShopFacade {
 

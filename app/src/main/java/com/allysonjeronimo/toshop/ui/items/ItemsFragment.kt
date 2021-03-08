@@ -10,17 +10,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.extensions.PrefsHelper
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
-import com.allysonjeronimo.toshop.legacy.utils.*
+import com.allysonjeronimo.toshop.common.extensions.toCurrency
+import com.allysonjeronimo.toshop.extensions.*
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
 import com.allysonjeronimo.toshop.ui.confirmdialog.ConfirmDialogFragment
 import kotlinx.android.synthetic.main.fragment_items.*
 import org.koin.android.ext.android.inject
@@ -271,7 +270,7 @@ class ItemsFragment : Fragment(), ItemsContract.ItemsView{
             }
         }
         ConfirmDialogFragment.newInstance(getString(R.string.text_delete), getString(R.string.msg_confirm_delete_list), listener)
-            .show(activity!!.supportFragmentManager, ConfirmDialogFragment.TAG)
+            .show(requireActivity().supportFragmentManager, ConfirmDialogFragment.TAG)
     }
 
     fun checkItems(shoppingListId: Long){

@@ -8,8 +8,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.utils.tintIcon
+import com.allysonjeronimo.toshop.extensions.tintIcon
+import com.allysonjeronimo.toshop.legacy.entities.Item
 import kotlinx.android.synthetic.main.toolbar.*
 
 class ItemFormActivity : AppCompatActivity(), ItemFormFragment.OnItemSaveListener {

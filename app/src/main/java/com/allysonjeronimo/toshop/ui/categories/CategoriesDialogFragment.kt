@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.data.legacy.entities.Category
+import com.allysonjeronimo.toshop.legacy.entities.Category
 import kotlinx.android.synthetic.main.fragment_categories_dialog.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf

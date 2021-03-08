@@ -1,6 +1,6 @@
 package com.allysonjeronimo.toshop.ui.itemform
 
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Item
 
 interface ItemFormContract {
     interface ItemFormPresenter{

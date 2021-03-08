@@ -3,10 +3,9 @@ package com.allysonjeronimo.toshop.legacy.repositories
 import android.content.Context
 import android.database.Cursor
 import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
-import com.allysonjeronimo.toshop.data.legacy.entities.Category
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
-import com.allysonjeronimo.toshop.data.legacy.entities.ProductName
-import com.allysonjeronimo.toshop.data.legacy.repositories.ProductRepository
+import com.allysonjeronimo.toshop.legacy.entities.Category
+import com.allysonjeronimo.toshop.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.entities.ProductName
 
 class ProductRepositoryImpl(private val context:Context) : ProductRepository {
 

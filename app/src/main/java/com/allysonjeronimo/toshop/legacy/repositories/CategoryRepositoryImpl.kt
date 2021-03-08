@@ -2,12 +2,9 @@ package com.allysonjeronimo.toshop.legacy.repositories
 
 import android.content.Context
 import android.database.Cursor
+import com.allysonjeronimo.toshop.legacy.entities.Category
+import com.allysonjeronimo.toshop.legacy.entities.CategoryName
 import com.allysonjeronimo.toshop.legacy.util.ShoppingListSQLiteHelper
-import com.allysonjeronimo.toshop.data.legacy.entities.Category
-import com.allysonjeronimo.toshop.data.legacy.entities.CategoryName
-import com.allysonjeronimo.toshop.data.legacy.repositories.CategoryRepository
-import com.allysonjeronimo.toshop.data.legacy.utils.locale
-import kotlin.collections.ArrayList
 
 class CategoryRepositoryImpl(private val context: Context) : CategoryRepository {
 
@@ -21,7 +18,7 @@ class CategoryRepositoryImpl(private val context: Context) : CategoryRepository 
                 "AND cn.${CategoryName.COLUMN_LOCALE} = ? ORDER BY ct.${Category.COLUMN_ID} ASC"
         val cursor = db.rawQuery(
             sql,
-            arrayOf(context.locale()))
+            arrayOf("pt-BR"))
         val result = ArrayList<Category>()
         while(cursor.moveToNext()){
             result.add(fromCursor(cursor))

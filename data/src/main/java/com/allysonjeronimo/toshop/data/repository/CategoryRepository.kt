@@ -11,4 +11,5 @@ interface CategoryRepository {
 
     suspend fun findAll(locale:String) : List<CategoryWithName>
 
+    suspend fun count(locale:String) : Int
 }

@@ -10,3 +10,4 @@ fun Context.loadFileFromAssets(fileName:String) : String{
 fun Context.locale() : String {
     return "${Locale.getDefault().language}-${Locale.getDefault().country}"
 }
+

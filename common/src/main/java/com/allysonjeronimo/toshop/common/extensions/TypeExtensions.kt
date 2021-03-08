@@ -1,4 +1,4 @@
-package com.allysonjeronimo.toshop.legacy.utils
+package com.allysonjeronimo.toshop.common.extensions
 
 import java.text.NumberFormat
 import java.util.*
@@ -11,6 +11,3 @@ fun Double.toCurrency() : String {
     val numberFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
     return numberFormat.format(this)
 }
-
-
-

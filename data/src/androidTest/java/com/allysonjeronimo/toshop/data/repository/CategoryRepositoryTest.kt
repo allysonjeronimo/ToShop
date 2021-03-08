@@ -43,13 +43,16 @@ class CategoryRepositoryTest : BaseRepositoryTest(){
     fun insert_categories_with_different_location_names() = testScope.runBlockingTest{
         // Given
         var categories = mockCategories()
+        val countDefaultCategoriesPtBR = categoryRepository.count(CATEGORY_LOCALE_PT_BR)
+        val countDefaultCategoriesEnUS = categoryRepository.count(CATEGORY_LOCALE_EN_US)
+        val countInsertedCategories = categories.size
         // When
         categoryRepository.insertWithNames(categories)
         // Then
         var insertedCategories = categoryRepository.findAll(CATEGORY_LOCALE_PT_BR)
-        assertEquals(categories.size, insertedCategories.size)
+        assertEquals(countDefaultCategoriesPtBR + countInsertedCategories, insertedCategories.size)
         insertedCategories = categoryRepository.findAll(CATEGORY_LOCALE_EN_US)
-        assertEquals(categories.size, insertedCategories.size)
+        assertEquals(countDefaultCategoriesEnUS + countInsertedCategories, insertedCategories.size)
     }
 
     @Test

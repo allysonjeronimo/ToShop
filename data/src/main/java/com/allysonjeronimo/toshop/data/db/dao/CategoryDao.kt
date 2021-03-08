@@ -14,6 +14,9 @@ abstract class CategoryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun insertNames(categoryNames:List<CategoryName>)
 
+    @Query("SELECT Count(cn.id) FROM CategoryName cn WHERE cn.locale = :locale")
+    abstract suspend fun count(locale:String) : Int
+
     @Query("""
         SELECT ct.id, ct.resource_icon_name, cn.name 
         FROM Category ct, CategoryName cn 

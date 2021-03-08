@@ -1,7 +1,7 @@
 package com.allysonjeronimo.toshop.ui.items
 
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
 
 interface ItemsContract {
     interface ItemsPresenter{

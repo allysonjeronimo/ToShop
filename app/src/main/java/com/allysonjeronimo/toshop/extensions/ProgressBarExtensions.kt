@@ -1,4 +1,4 @@
-package com.allysonjeronimo.toshop.legacy.utils
+package com.allysonjeronimo.toshop.extensions
 
 import android.animation.ObjectAnimator
 import android.view.animation.DecelerateInterpolator

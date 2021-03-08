@@ -1,7 +1,7 @@
 package com.allysonjeronimo.toshop.data.db.entity
 
 import androidx.room.ColumnInfo
-import com.allysonjeronimo.toshop.legacy.utils.toCurrency
+import com.allysonjeronimo.toshop.common.extensions.toCurrency
 import java.util.*
 
 data class ItemWithCategoryIcon(

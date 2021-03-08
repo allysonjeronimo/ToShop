@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
-import com.allysonjeronimo.toshop.data.legacy.utils.color
+import com.allysonjeronimo.toshop.extensions.color
+import com.allysonjeronimo.toshop.legacy.entities.Product
 import kotlinx.android.synthetic.main.item_product.view.*
 
 class ProductSearchAdapter(

@@ -1,8 +1,8 @@
 package com.allysonjeronimo.toshop.legacy.facade.interfaces
 
-import com.allysonjeronimo.toshop.data.legacy.entities.Category
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.entities.Product
+import com.allysonjeronimo.toshop.legacy.entities.Category
+import com.allysonjeronimo.toshop.legacy.entities.Item
+import com.allysonjeronimo.toshop.legacy.entities.Product
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
 
 interface ToShopFacade {

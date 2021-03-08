@@ -11,8 +11,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.allysonjeronimo.toshop.R
-import com.allysonjeronimo.toshop.data.legacy.entities.Item
-import com.allysonjeronimo.toshop.data.legacy.utils.resourceId
+import com.allysonjeronimo.toshop.extensions.resourceId
+import com.allysonjeronimo.toshop.legacy.entities.Item
 import kotlinx.android.synthetic.main.item_shopping_list_item.view.*
 
 class ItemAdapter(

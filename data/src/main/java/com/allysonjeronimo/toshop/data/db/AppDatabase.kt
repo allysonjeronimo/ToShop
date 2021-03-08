@@ -21,7 +21,7 @@ import com.allysonjeronimo.toshop.data.db.entity.*
         ProductName::class,
         ShoppingList::class
     ],
-    version = DB_VERSION
+    version = AppDatabase.DB_VERSION
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase(){
@@ -34,6 +34,9 @@ abstract class AppDatabase : RoomDatabase(){
     companion object{
         @Volatile
         private var INSTANCE: AppDatabase? = null
+
+        const val DB_NAME = "ToShop.db"
+        const val DB_VERSION = 2
 
         fun getInstance(context: Context) : AppDatabase {
             synchronized(this){
