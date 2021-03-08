@@ -15,10 +15,10 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
-import com.allysonjeronimo.toshop.legacy.utils.deviceInfo
-import com.allysonjeronimo.toshop.legacy.utils.openPlayStore
-import com.allysonjeronimo.toshop.legacy.utils.sendEmail
-import com.allysonjeronimo.toshop.legacy.utils.tintMenuIcon
+import com.allysonjeronimo.toshop.data.legacy.utils.deviceInfo
+import com.allysonjeronimo.toshop.data.legacy.utils.openPlayStore
+import com.allysonjeronimo.toshop.data.legacy.utils.sendEmail
+import com.allysonjeronimo.toshop.data.legacy.utils.tintMenuIcon
 import com.allysonjeronimo.toshop.ui.about.AboutActivity
 import com.allysonjeronimo.toshop.ui.shoppinglistform.ShoppingListFormFragment
 import com.allysonjeronimo.toshop.ui.items.ItemsActivity

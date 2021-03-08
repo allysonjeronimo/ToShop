@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.legacy.entities.ShoppingList
-import com.allysonjeronimo.toshop.legacy.utils.tintIcon
+import com.allysonjeronimo.toshop.data.legacy.utils.tintIcon
 import com.allysonjeronimo.toshop.ui.items.ItemsActivity
 import kotlinx.android.synthetic.main.toolbar.*
 

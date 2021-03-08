@@ -1,7 +1,7 @@
 package com.allysonjeronimo.toshop.data.db
 
 import androidx.room.TypeConverter
-import com.allysonjeronimo.toshop.extensions.DateUtils
+import com.allysonjeronimo.toshop.common.utils.DateUtils
 import java.util.*
 
 class Converters {

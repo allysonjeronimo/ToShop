@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.allysonjeronimo.toshop.R
 import com.allysonjeronimo.toshop.data.legacy.entities.Item
 import com.allysonjeronimo.toshop.data.legacy.entities.Category
-import com.allysonjeronimo.toshop.legacy.utils.resourceId
+import com.allysonjeronimo.toshop.data.legacy.utils.resourceId
 import com.allysonjeronimo.toshop.ui.categories.CategoriesDialogFragment
 import com.allysonjeronimo.toshop.ui.dropdownlist.DropdownListDialogFragment
 import kotlinx.android.synthetic.main.fragment_item_form.*
