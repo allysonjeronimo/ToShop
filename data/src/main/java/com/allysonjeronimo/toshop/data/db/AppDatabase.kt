@@ -14,17 +14,17 @@ import com.allysonjeronimo.toshop.data.db.entity.*
 
 @Database(
     entities = [
-        Category::class,
-        CategoryName::class,
-        Item::class,
-        Product::class,
-        ProductName::class,
-        ShoppingList::class
+        CategoryEntity::class,
+        CategoryNameEntity::class,
+        ItemEntity::class,
+        ProductEntity::class,
+        ProductNameEntity::class,
+        ShoppingListEntity::class
     ],
     version = AppDatabase.DB_VERSION
 )
 @TypeConverters(Converters::class)
-abstract class AppDatabase : RoomDatabase(){
+internal abstract class AppDatabase : RoomDatabase(){
 
     abstract fun categoryDao(): CategoryDao
     abstract fun productDao() : ProductDao

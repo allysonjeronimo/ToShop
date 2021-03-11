@@ -8,16 +8,17 @@ import androidx.room.PrimaryKey
 import java.util.*
 
 @Entity(
+    tableName = "Item",
     foreignKeys = [
         ForeignKey(
-                entity = ShoppingList::class,
+                entity = ShoppingListEntity::class,
                 parentColumns = ["id"],
                 childColumns = ["list_id"],
                 onDelete = CASCADE
         )
     ]
 )
-data class Item(
+internal data class ItemEntity(
     @PrimaryKey(autoGenerate = true)
     var id:Long = 0L,
     var description:String,

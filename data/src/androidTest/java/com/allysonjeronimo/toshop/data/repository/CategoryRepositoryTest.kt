@@ -1,7 +1,8 @@
 package com.allysonjeronimo.toshop.data.repository
 
-import com.allysonjeronimo.toshop.data.db.entity.Category
-import com.allysonjeronimo.toshop.data.db.entity.CategoryName
+import com.allysonjeronimo.toshop.data.db.entity.CategoryEntity
+import com.allysonjeronimo.toshop.data.db.entity.CategoryNameEntity
+import com.allysonjeronimo.toshop.domain.repository.CategoryRepository
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.test.runBlockingTest
@@ -15,20 +16,20 @@ class CategoryRepositoryTest : BaseRepositoryTest(){
 
     @Before
     fun setup(){
-        categoryRepository = CategoryDataSource(db.categoryDao())
+        categoryRepository = CategoryRepositoryImpl(db.categoryDao())
     }
 
-    private fun mockCategories() : List<Category>{
-        val categories = mutableListOf<Category>()
+    private fun mockCategories() : List<CategoryEntity>{
+        val categories = mutableListOf<CategoryEntity>()
         for(i in 1..3){
-            val category = Category(i.toLong(), "")
+            val category = CategoryEntity(i.toLong(), "")
             category.categoryNames = mutableListOf(
-                CategoryName(
+                CategoryNameEntity(
                     locale = CATEGORY_LOCALE_PT_BR,
                     name = "Category$i-$CATEGORY_LOCALE_PT_BR",
                     categoryId = i.toLong()
                 ),
-                CategoryName(
+                CategoryNameEntity(
                     locale = CATEGORY_LOCALE_EN_US,
                     name = "Category$i-$CATEGORY_LOCALE_EN_US",
                     categoryId = i.toLong()

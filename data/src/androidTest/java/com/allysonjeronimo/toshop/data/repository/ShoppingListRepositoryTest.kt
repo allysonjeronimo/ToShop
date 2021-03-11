@@ -1,7 +1,9 @@
 package com.allysonjeronimo.toshop.data.repository
 
-import com.allysonjeronimo.toshop.data.db.entity.Item
-import com.allysonjeronimo.toshop.data.db.entity.ShoppingList
+import com.allysonjeronimo.toshop.data.db.entity.ItemEntity
+import com.allysonjeronimo.toshop.data.db.entity.ShoppingListEntity
+import com.allysonjeronimo.toshop.domain.repository.ItemRepository
+import com.allysonjeronimo.toshop.domain.repository.ShoppingListRepository
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
@@ -14,16 +16,16 @@ class ShoppingListRepositoryTest : BaseRepositoryTest() {
 
     @Before
     fun setup(){
-        shoppingListRepository = ShoppingListDataSource(db.shoppingListDao())
-        itemRepository = ItemDataSource(db.itemDao())
+        shoppingListRepository = ShoppingListRepositoryImpl(db.shoppingListDao())
+        itemRepository = ItemRepositoryImpl(db.itemDao())
     }
 
-    private fun mockShoppingList() : ShoppingList {
-        return ShoppingList(description = SHOPPING_LIST_DESCRIPTION)
+    private fun mockShoppingList() : ShoppingListEntity {
+        return ShoppingListEntity(description = SHOPPING_LIST_DESCRIPTION)
     }
 
-    private fun mockItem(purchased:Boolean = false, shoppingListId:Long = 0L) : Item {
-        return Item(
+    private fun mockItem(purchased:Boolean = false, shoppingListId:Long = 0L) : ItemEntity {
+        return ItemEntity(
             description = ITEM_DESCRIPTION,
             quantity = ITEM_QUANTITY,
             purchased = purchased,

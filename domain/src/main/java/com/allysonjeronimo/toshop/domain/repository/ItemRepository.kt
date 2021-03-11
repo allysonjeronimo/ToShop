@@ -1,7 +1,6 @@
-package com.allysonjeronimo.toshop.data.repository
+package com.allysonjeronimo.toshop.domain.repository
 
-import com.allysonjeronimo.toshop.data.db.entity.Item
-import com.allysonjeronimo.toshop.data.db.entity.ItemWithCategoryIcon
+import com.allysonjeronimo.toshop.domain.entity.Item
 
 interface ItemRepository {
 
@@ -13,7 +12,7 @@ interface ItemRepository {
 
     suspend fun updatePurchasedByShoppingList(purchased:Boolean, shoppingListId: Long)
 
-    suspend fun findByShoppingList(shoppingListId: Long) : List<ItemWithCategoryIcon>
+    suspend fun findByShoppingList(shoppingListId: Long) : List<Item>
 
     suspend fun countByShoppingList(shoppingListId: Long) : Int
 

@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
-data class CategoryName (
+@Entity(tableName = "CategoryName")
+internal data class CategoryNameEntity (
     @PrimaryKey(autoGenerate = true)
     val id:Long = 0L,
     val locale:String,

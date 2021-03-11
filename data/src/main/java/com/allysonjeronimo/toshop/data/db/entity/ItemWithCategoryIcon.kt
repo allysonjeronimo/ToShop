@@ -4,13 +4,13 @@ import androidx.room.ColumnInfo
 import com.allysonjeronimo.toshop.common.extensions.toCurrency
 import java.util.*
 
-data class ItemWithCategoryIcon(
+internal data class ItemWithCategoryIcon(
     var id:Long = 0L,
-    var description:String? = null,
+    var description:String,
     var quantity:Double = 1.0,
     var unit:String? = null,
     var price:Double = 0.0,
-    var notes:String = "",
+    var notes:String? = "",
     var purchased:Boolean = false,
     @ColumnInfo(name="last_update")
     var lastUpdate: Date = Date(),

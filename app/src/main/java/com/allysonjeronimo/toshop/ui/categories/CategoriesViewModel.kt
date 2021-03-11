@@ -1,27 +1,30 @@
 package com.allysonjeronimo.toshop.ui.categories
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.allysonjeronimo.toshop.data.db.entity.Category
-import com.allysonjeronimo.toshop.data.repository.CategoryRepository
+import androidx.lifecycle.*
+import com.allysonjeronimo.toshop.data.db.entity.CategoryWithName
+import com.allysonjeronimo.toshop.domain.repository.CategoryRepository
+import kotlinx.coroutines.launch
 
 class CategoriesViewModel(
-    private val repository: CategoryRepository
+    private val repository: com.allysonjeronimo.toshop.domain.repository.CategoryRepository
 ) : ViewModel() {
 
-    private val _categoriesLiveData = MutableLiveData<List<Category>>()
+    private val _categoriesLiveData = MutableLiveData<List<CategoryWithName>>()
+    private val _isLoadingLiveData = MutableLiveData<Boolean>()
 
-    val categoriesLiveData: LiveData<List<Category>>
+    val categoriesLiveData: LiveData<List<CategoryWithName>>
         get() = _categoriesLiveData
+    val isLoadingLiveData: LiveData<Boolean>
+        get() = _isLoadingLiveData
 
-    fun loadCategories(){
-
+    fun loadCategories(locale:String) = viewModelScope.launch {
+        _isLoadingLiveData.value = true
+        _categoriesLiveData.value = repository.findAll(locale)
+        _isLoadingLiveData.value = false
     }
 
     class CategoriesViewModelFactory(
-        private val repository: CategoryRepository
+        private val repository: com.allysonjeronimo.toshop.domain.repository.CategoryRepository
     ) : ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>) =
             CategoriesViewModel(repository) as T

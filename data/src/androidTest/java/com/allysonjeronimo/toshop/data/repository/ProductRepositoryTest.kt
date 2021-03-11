@@ -1,8 +1,10 @@
 package com.allysonjeronimo.toshop.data.repository
 
-import com.allysonjeronimo.toshop.data.db.entity.Category
-import com.allysonjeronimo.toshop.data.db.entity.Product
-import com.allysonjeronimo.toshop.data.db.entity.ProductName
+import com.allysonjeronimo.toshop.data.db.entity.CategoryEntity
+import com.allysonjeronimo.toshop.data.db.entity.ProductEntity
+import com.allysonjeronimo.toshop.data.db.entity.ProductNameEntity
+import com.allysonjeronimo.toshop.domain.repository.CategoryRepository
+import com.allysonjeronimo.toshop.domain.repository.ProductRepository
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.test.runBlockingTest
@@ -16,8 +18,8 @@ class ProductRepositoryTest : BaseRepositoryTest(){
 
     @Before
     fun setup(){
-        productRepository = ProductDataSource(db.productDao())
-        categoryRepository = CategoryDataSource(db.categoryDao())
+        productRepository = ProductRepositoryImpl(db.productDao())
+        categoryRepository = CategoryRepositoryImpl(db.categoryDao())
         insertCategory()
     }
 
@@ -26,21 +28,21 @@ class ProductRepositoryTest : BaseRepositoryTest(){
         categoryRepository.insertAll(listOf(category))
     }
 
-    private fun mockCategory() : Category {
-        return Category(1, "")
+    private fun mockCategory() : CategoryEntity {
+        return CategoryEntity(1, "")
     }
 
-    private fun mockProducts() : List<Product>{
-        val products = mutableListOf<Product>()
+    private fun mockProducts() : List<ProductEntity>{
+        val products = mutableListOf<ProductEntity>()
         for(i in 1..3){
-            val product = Product(i.toLong(), 1)
-            product.productNames = mutableListOf<ProductName>(
-                ProductName(
+            val product = ProductEntity(i.toLong(), 1)
+            product.productNames = mutableListOf<ProductNameEntity>(
+                ProductNameEntity(
                     locale= PRODUCT_LOCALE_PT_BR,
                     name="Product-$i-$PRODUCT_LOCALE_PT_BR",
                     productId = i.toLong()
                 ),
-                ProductName(
+                ProductNameEntity(
                     locale = PRODUCT_LOCALE_EN_US,
                     name="Product-$i-$PRODUCT_LOCALE_EN_US",
                     productId = i.toLong()

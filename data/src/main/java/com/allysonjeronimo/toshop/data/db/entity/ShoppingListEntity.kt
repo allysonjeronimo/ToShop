@@ -4,14 +4,13 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import java.util.*
 
-@Entity
-data class Category(
+@Entity(tableName="List")
+internal data class ShoppingListEntity(
     @PrimaryKey(autoGenerate = true)
     var id:Long = 0L,
-    @ColumnInfo(name="resource_icon_name")
-    var resourceIconName:String
-){
-    @Ignore
-    var categoryNames = mutableListOf<CategoryName>()
-}
+    var description:String = "",
+    @ColumnInfo(name="last_update", defaultValue = "CURRENT_TIMESTAMP")
+    var lastUpdate:Date = Date()
+)

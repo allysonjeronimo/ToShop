@@ -26,7 +26,7 @@ open class BaseRepositoryTest {
     var rule = InstantTaskExecutorRule()
     private val testDispatcher = TestCoroutineDispatcher()
     val testScope = TestCoroutineScope(testDispatcher)
-    lateinit var db: AppDatabase
+    internal lateinit var db: AppDatabase
 
     @Before
     fun initDatabase(){

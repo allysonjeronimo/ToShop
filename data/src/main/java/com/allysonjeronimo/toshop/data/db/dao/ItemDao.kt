@@ -4,14 +4,14 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.allysonjeronimo.toshop.data.db.entity.Item
+import com.allysonjeronimo.toshop.data.db.entity.ItemEntity
 import com.allysonjeronimo.toshop.data.db.entity.ItemWithCategoryIcon
 
 @Dao
-interface ItemDao {
+internal interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(item: Item)
+    suspend fun save(item: ItemEntity)
 
     @Query("DELETE FROM Item WHERE id = :itemId")
     suspend fun delete(itemId:Long)

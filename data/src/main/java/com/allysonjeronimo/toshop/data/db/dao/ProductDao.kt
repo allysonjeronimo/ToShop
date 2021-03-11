@@ -4,18 +4,18 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.allysonjeronimo.toshop.data.db.entity.Product
-import com.allysonjeronimo.toshop.data.db.entity.ProductName
+import com.allysonjeronimo.toshop.data.db.entity.ProductEntity
+import com.allysonjeronimo.toshop.data.db.entity.ProductNameEntity
 import com.allysonjeronimo.toshop.data.db.entity.ProductWithName
 
 @Dao
-abstract class ProductDao {
+internal abstract class ProductDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertAll(products:List<Product>)
+    abstract suspend fun insertAll(products:List<ProductEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertNames(productNames:List<ProductName>)
+    abstract suspend fun insertNames(productNames:List<ProductNameEntity>)
 
     @Query("""
         SELECT p.id, p.category_id, pn.name 
@@ -27,7 +27,7 @@ abstract class ProductDao {
     """)
     abstract suspend fun search(term:String, locale:String) : List<ProductWithName>
 
-    suspend fun insertWithNames(products: List<Product>){
+    suspend fun insertWithNames(products: List<ProductEntity>){
         val productNames = products.flatMap { it.productNames!! }
         insertAll(products)
         insertNames(productNames)

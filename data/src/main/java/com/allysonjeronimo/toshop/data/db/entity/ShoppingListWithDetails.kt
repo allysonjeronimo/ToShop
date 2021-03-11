@@ -3,11 +3,11 @@ package com.allysonjeronimo.toshop.data.db.entity
 import androidx.room.ColumnInfo
 import java.util.*
 
-data class ShoppingListWithDetails(
+internal data class ShoppingListWithDetails(
     var id:Long = 0L,
     var description:String = "",
     @ColumnInfo(name="last_update")
-    var lastUpdate: Date? = Date(),
+    var lastUpdate: Date,
     @ColumnInfo(name="quantity_purchased_items")
     var quantityPurchasedItems:Int = 0,
     @ColumnInfo(name="quantity_items")

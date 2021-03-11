@@ -3,10 +3,10 @@ package com.allysonjeronimo.toshop.data.db
 import android.content.Context
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.allysonjeronimo.toshop.common.extensions.loadFileFromAssets
-import com.allysonjeronimo.toshop.data.db.entity.Category
-import com.allysonjeronimo.toshop.data.db.entity.CategoryName
-import com.allysonjeronimo.toshop.data.db.entity.Product
-import com.allysonjeronimo.toshop.data.db.entity.ProductName
+import com.allysonjeronimo.toshop.data.db.entity.CategoryEntity
+import com.allysonjeronimo.toshop.data.db.entity.CategoryNameEntity
+import com.allysonjeronimo.toshop.data.db.entity.ProductEntity
+import com.allysonjeronimo.toshop.data.db.entity.ProductNameEntity
 import org.json.JSONArray
 
 class DataHelper(
@@ -50,21 +50,21 @@ class DataHelper(
         }
     }
 
-    private fun getCategories() : List<Category>{
+    private fun getCategories() : List<CategoryEntity>{
         val categoriesJson = context.loadFileFromAssets(FILE_CATEGORIES)
         val categoriesArray = JSONArray(categoriesJson)
-        val categories = mutableListOf<Category>()
+        val categories = mutableListOf<CategoryEntity>()
         for(i in 0 until categoriesArray.length()){
             val categoryObject = categoriesArray.getJSONObject(i)
             val id = categoryObject.getLong("id")
             val resourceIconName = categoryObject.getString("resource_icon")
             val namesArray = categoryObject.getJSONArray("names")
-            val category = Category(id, resourceIconName)
+            val category = CategoryEntity(id, resourceIconName)
             for(j in 0 until namesArray.length()){
                 val nameObject = namesArray.getJSONObject(j)
                 val name = nameObject.getString("name")
                 val locale = nameObject.getString("locale")
-                val categoryName = CategoryName(locale = locale, name = name, categoryId = id)
+                val categoryName = CategoryNameEntity(locale = locale, name = name, categoryId = id)
                 category.categoryNames.add(categoryName)
             }
             categories.add(category)
@@ -72,21 +72,21 @@ class DataHelper(
         return categories
     }
 
-    private fun getProducts() : List<Product>{
+    private fun getProducts() : List<ProductEntity>{
         val productsJson = context.loadFileFromAssets(FILE_PRODUCTS)
         val productsArray = JSONArray(productsJson)
-        val products = mutableListOf<Product>()
+        val products = mutableListOf<ProductEntity>()
         for(i in 0 until productsArray.length()){
             val productObject = productsArray.getJSONObject(i)
             val productId = i+1L
             val categoryId = productObject.getLong("category_id")
             val namesArray = productObject.getJSONArray("names")
-            val product = Product(productId, categoryId)
+            val product = ProductEntity(productId, categoryId)
             for(j in 0 until namesArray.length()){
                 val nameObject = namesArray.getJSONObject(j)
                 val name = nameObject.getString("name")
                 val locale = nameObject.getString("locale")
-                val productName = ProductName(locale=locale,name=name,productId=productId)
+                val productName = ProductNameEntity(locale=locale,name=name,productId=productId)
                 product.productNames.add(productName)
             }
             products.add(product)

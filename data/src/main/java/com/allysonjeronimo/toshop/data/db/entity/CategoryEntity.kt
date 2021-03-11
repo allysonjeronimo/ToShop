@@ -5,13 +5,13 @@ import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
-@Entity
-data class Product(
+@Entity(tableName = "Category")
+internal data class CategoryEntity(
     @PrimaryKey(autoGenerate = true)
-    val id:Long = 0L,
-    @ColumnInfo(name="category_id")
-    val categoryId: Long
+    var id:Long = 0L,
+    @ColumnInfo(name="resource_icon_name")
+    var resourceIconName:String
 ){
     @Ignore
-    var productNames = mutableListOf<ProductName>()
+    var categoryNames = mutableListOf<CategoryNameEntity>()
 }

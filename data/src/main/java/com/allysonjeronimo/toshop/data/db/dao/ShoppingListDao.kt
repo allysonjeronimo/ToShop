@@ -1,14 +1,14 @@
 package com.allysonjeronimo.toshop.data.db.dao
 
 import androidx.room.*
-import com.allysonjeronimo.toshop.data.db.entity.ShoppingList
+import com.allysonjeronimo.toshop.data.db.entity.ShoppingListEntity
 import com.allysonjeronimo.toshop.data.db.entity.ShoppingListWithDetails
 
 @Dao
-interface ShoppingListDao {
+internal interface ShoppingListDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(shoppingList: ShoppingList)
+    suspend fun save(shoppingList: ShoppingListEntity)
 
     @Query("DELETE FROM List WHERE id = :shoppingListId")
     suspend fun delete(shoppingListId:Long)

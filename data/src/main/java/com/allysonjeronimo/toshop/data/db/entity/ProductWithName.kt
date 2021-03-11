@@ -3,7 +3,7 @@ package com.allysonjeronimo.toshop.data.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Ignore
 
-data class ProductWithName (
+internal data class ProductWithName (
     var id:Long = 0L,
     @ColumnInfo(name="category_id")
     var categoryId: Long,
@@ -13,8 +13,8 @@ data class ProductWithName (
     @Ignore
     var isNew:Boolean = false
 
-    fun getItem(shoppingListId:Long): Item {
-        return Item(
+    fun getItem(shoppingListId:Long): ItemEntity {
+        return ItemEntity(
             description = this.name,
             categoryId = this.categoryId,
             listId = shoppingListId

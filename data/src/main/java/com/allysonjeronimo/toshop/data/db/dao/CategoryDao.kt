@@ -1,18 +1,18 @@
 package com.allysonjeronimo.toshop.data.db.dao
 
 import androidx.room.*
-import com.allysonjeronimo.toshop.data.db.entity.Category
-import com.allysonjeronimo.toshop.data.db.entity.CategoryName
+import com.allysonjeronimo.toshop.data.db.entity.CategoryEntity
+import com.allysonjeronimo.toshop.data.db.entity.CategoryNameEntity
 import com.allysonjeronimo.toshop.data.db.entity.CategoryWithName
 
 @Dao
-abstract class CategoryDao {
+internal abstract class CategoryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertAll(categories:List<Category>)
+    abstract suspend fun insertAll(categories:List<CategoryEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertNames(categoryNames:List<CategoryName>)
+    abstract suspend fun insertNames(categoryNames:List<CategoryNameEntity>)
 
     @Query("SELECT Count(cn.id) FROM CategoryName cn WHERE cn.locale = :locale")
     abstract suspend fun count(locale:String) : Int
@@ -25,7 +25,7 @@ abstract class CategoryDao {
     """)
     abstract suspend fun findAll(locale:String) : List<CategoryWithName>
 
-    suspend fun insertWithNames(categories:List<Category>){
+    suspend fun insertWithNames(categories:List<CategoryEntity>){
         val categoryNames = categories.flatMap { it.categoryNames!! }
         insertAll(categories)
         insertNames(categoryNames)

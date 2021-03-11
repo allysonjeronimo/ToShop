@@ -1,14 +1,20 @@
 package com.allysonjeronimo.toshop.data.repository
 
 import com.allysonjeronimo.toshop.data.db.dao.ItemDao
-import com.allysonjeronimo.toshop.data.db.entity.Item
+import com.allysonjeronimo.toshop.data.db.entity.ItemEntity
+import com.allysonjeronimo.toshop.data.db.entity.ItemWithCategoryIcon
+import com.allysonjeronimo.toshop.data.mapper.Mapper
+import com.allysonjeronimo.toshop.domain.entity.Item
+import com.allysonjeronimo.toshop.domain.repository.ItemRepository
 
-class ItemDataSource (
-    private val dao : ItemDao
-    ) : ItemRepository{
+internal class ItemRepositoryImpl (
+    private val dao : ItemDao,
+    private val toModelMapper: Mapper<ItemWithCategoryIcon, Item>,
+    private val toEntityMapper: Mapper<Item, ItemEntity>
+    ) : ItemRepository {
 
     override suspend fun save(item: Item) {
-        dao.save(item)
+        dao.save(toEntityMapper.map(item))
     }
 
     override suspend fun delete(id: Long) {
@@ -24,7 +30,7 @@ class ItemDataSource (
     }
 
     override suspend fun findByShoppingList(shoppingListId: Long) =
-        dao.findByShoppingList(shoppingListId)
+        dao.findByShoppingList(shoppingListId).map { toModelMapper.map(it) }
 
 
     override suspend fun countByShoppingList(shoppingListId: Long) =
