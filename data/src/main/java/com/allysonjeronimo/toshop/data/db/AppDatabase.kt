@@ -35,7 +35,7 @@ internal abstract class AppDatabase : RoomDatabase(){
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        const val DB_NAME = "ToShop.db"
+        private const val DB_NAME = "ToShop.db"
         const val DB_VERSION = 2
 
         fun getInstance(context: Context) : AppDatabase {

@@ -1,8 +1,6 @@
 package com.allysonjeronimo.toshop.data.repository
 
 import com.allysonjeronimo.toshop.data.db.InitDatabaseTest
-import com.allysonjeronimo.toshop.data.db.entity.ItemEntity
-import com.allysonjeronimo.toshop.data.db.entity.ShoppingListEntity
 import com.allysonjeronimo.toshop.data.mapper.ItemEntityToModelMapper
 import com.allysonjeronimo.toshop.data.mapper.ItemModelToEntityMapper
 import com.allysonjeronimo.toshop.data.mapper.ShoppingListEntityToModelMapper

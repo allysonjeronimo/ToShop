@@ -32,7 +32,6 @@ internal class ItemRepositoryImpl (
     override suspend fun findByShoppingList(shoppingListId: Long) =
         dao.findByShoppingList(shoppingListId).map { toModelMapper.map(it) }
 
-
     override suspend fun countByShoppingList(shoppingListId: Long) =
         dao.countByShoppingList(shoppingListId)
 
