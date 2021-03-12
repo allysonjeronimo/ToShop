@@ -12,6 +12,6 @@ internal class ProductRepositoryImpl(
 ) : ProductRepository {
 
     override suspend fun search(term: String, locale: String): List<Product> {
-        return dao.search("%$term%", locale).map{toModelMapper.map(it)}
+        return dao.search(term, locale).map{toModelMapper.map(it)}
     }
 }

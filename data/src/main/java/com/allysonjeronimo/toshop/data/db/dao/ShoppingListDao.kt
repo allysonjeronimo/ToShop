@@ -25,7 +25,7 @@ internal interface ShoppingListDao {
          (SELECT Count(i.id) FROM Item i WHERE i.list_id = l.id AND i.purchased = 1) as quantity_purchased_items,
          (SELECT Coalesce(Sum(i.quantity * i.price), 0.0) FROM Item i WHERE i.list_id = l.id AND i.purchased = 1) as total
         FROM List l
-        WHERE l.description like :term
+        WHERE l.description like '%' || :term || '%'
         ORDER BY l.description ASC
     """)
     suspend fun search(term:String) : List<ShoppingListWithDetails>

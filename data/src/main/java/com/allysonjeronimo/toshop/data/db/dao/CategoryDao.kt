@@ -24,11 +24,4 @@ internal abstract class CategoryDao {
         ORDER BY ct.id ASC
     """)
     abstract suspend fun findAll(locale:String) : List<CategoryWithName>
-
-    suspend fun insertWithNames(categories:List<CategoryEntity>){
-        val categoryNames = categories.flatMap { it.categoryNames!! }
-        insertAll(categories)
-        insertNames(categoryNames)
-    }
-
 }

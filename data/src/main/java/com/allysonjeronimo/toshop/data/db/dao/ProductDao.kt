@@ -21,15 +21,9 @@ internal abstract class ProductDao {
         SELECT p.id, p.category_id, pn.name 
         FROM Product p, ProductName pn
         WHERE p.id = pn.product_id AND 
-        pn.name like :term AND
+        pn.name like '%' || :term || '%' AND
         pn.locale = :locale
         ORDER BY pn.name ASC
     """)
     abstract suspend fun search(term:String, locale:String) : List<ProductWithName>
-
-    suspend fun insertWithNames(products: List<ProductEntity>){
-        val productNames = products.flatMap { it.productNames!! }
-        insertAll(products)
-        insertNames(productNames)
-    }
 }

@@ -42,11 +42,15 @@ class DataHelper(
     }
 
     fun initDatabase(db: SupportSQLiteDatabase){
-        if(!hasCategoryData(db)){
-            insertCategories(db)
-        }
-        if(!hasProductData(db)){
-            insertProducts(db)
+        try{
+            if(!hasCategoryData(db)){
+                insertCategories(db)
+            }
+            if(!hasProductData(db)){
+                insertProducts(db)
+            }
+        }catch(ex:Exception){
+            ex.printStackTrace()
         }
     }
 

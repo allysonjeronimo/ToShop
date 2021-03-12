@@ -1,7 +1,14 @@
 package com.allysonjeronimo.toshop.data.repository
 
+import com.allysonjeronimo.toshop.data.db.InitDatabaseTest
 import com.allysonjeronimo.toshop.data.db.entity.ItemEntity
 import com.allysonjeronimo.toshop.data.db.entity.ShoppingListEntity
+import com.allysonjeronimo.toshop.data.mapper.ItemEntityToModelMapper
+import com.allysonjeronimo.toshop.data.mapper.ItemModelToEntityMapper
+import com.allysonjeronimo.toshop.data.mapper.ShoppingListEntityToModelMapper
+import com.allysonjeronimo.toshop.data.mapper.ShoppingListModelToEntityMapper
+import com.allysonjeronimo.toshop.domain.entity.Item
+import com.allysonjeronimo.toshop.domain.entity.ShoppingList
 import com.allysonjeronimo.toshop.domain.repository.ItemRepository
 import com.allysonjeronimo.toshop.domain.repository.ShoppingListRepository
 import junit.framework.Assert.assertEquals
@@ -9,23 +16,32 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
 
-class ShoppingListRepositoryTest : BaseRepositoryTest() {
+class ShoppingListRepositoryTest : InitDatabaseTest() {
 
     private lateinit var shoppingListRepository: ShoppingListRepository
     private lateinit var itemRepository: ItemRepository
 
     @Before
     fun setup(){
-        shoppingListRepository = ShoppingListRepositoryImpl(db.shoppingListDao())
-        itemRepository = ItemRepositoryImpl(db.itemDao())
+        shoppingListRepository = ShoppingListRepositoryImpl(
+            db.shoppingListDao(),
+            ShoppingListEntityToModelMapper(),
+            ShoppingListModelToEntityMapper()
+        )
+
+        itemRepository = ItemRepositoryImpl(
+            db.itemDao(),
+            ItemEntityToModelMapper(),
+            ItemModelToEntityMapper()
+        )
     }
 
-    private fun mockShoppingList() : ShoppingListEntity {
-        return ShoppingListEntity(description = SHOPPING_LIST_DESCRIPTION)
+    private fun mockShoppingList() : ShoppingList {
+        return ShoppingList(description = SHOPPING_LIST_DESCRIPTION)
     }
 
-    private fun mockItem(purchased:Boolean = false, shoppingListId:Long = 0L) : ItemEntity {
-        return ItemEntity(
+    private fun mockItem(purchased:Boolean = false, shoppingListId:Long = 0L) : Item {
+        return Item(
             description = ITEM_DESCRIPTION,
             quantity = ITEM_QUANTITY,
             purchased = purchased,

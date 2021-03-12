@@ -29,7 +29,7 @@ internal class ShoppingListRepositoryImpl(
         return if(term.isEmpty())
             dao.findAll().map{toModelMapper.map(it)}
         else
-            dao.search("%$term%").map{toModelMapper.map(it)}
+            dao.search(term).map{toModelMapper.map(it)}
     }
 
     override suspend fun count() = dao.count()

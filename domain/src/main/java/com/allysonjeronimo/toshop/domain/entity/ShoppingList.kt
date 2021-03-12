@@ -3,9 +3,9 @@ package com.allysonjeronimo.toshop.domain.entity
 import java.util.*
 
 data class ShoppingList(
-    val id:Long,
-    val description:String,
-    val lastUpdate:Date,
-    val quantityPurchasedItems:Int,
-    val quantityItems:Int,
-    val total:Double)
+    var id:Long = 0L,
+    var description:String,
+    var lastUpdate:Date = Date(),
+    var quantityPurchasedItems:Int = 0,
+    var quantityItems:Int = 0,
+    var total:Double = 0.0)
