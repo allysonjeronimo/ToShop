@@ -81,7 +81,7 @@ class SQLiteDataHelper(private val context:Context){
             "DELETE FROM %s"
     }
 
-    private fun getCategories() : List<Category>{
+    public fun getCategories() : List<Category>{
         val categoriesJson = AssetsHelper.getInstance(context).loadJSON(AssetsHelper.FILE_CATEGORIES)
         val categoriesArray = JSONArray(categoriesJson)
         val categories = mutableListOf<Category>()
@@ -95,7 +95,11 @@ class SQLiteDataHelper(private val context:Context){
                 val nameObject = namesArray.getJSONObject(j)
                 val name = nameObject.getString("name")
                 val locale = nameObject.getString("locale")
-                val categoryName = CategoryName(locale = locale, name = name, categoryId = id)
+                val categoryName = CategoryName(
+                    locale = locale,
+                    name = name,
+                    categoryId = id
+                )
                 category.categoryNames.add(categoryName)
             }
             categories.add(category)
@@ -103,7 +107,7 @@ class SQLiteDataHelper(private val context:Context){
         return categories
     }
 
-    private fun getProducts() : List<Product>{
+    public fun getProducts() : List<Product>{
         val productsJson = AssetsHelper.getInstance(context).loadJSON(AssetsHelper.FILE_PRODUCTS)
         val productsArray = JSONArray(productsJson)
         val products = mutableListOf<Product>()
@@ -117,7 +121,11 @@ class SQLiteDataHelper(private val context:Context){
                 val nameObject = namesArray.getJSONObject(j)
                 val name = nameObject.getString("name")
                 val locale = nameObject.getString("locale")
-                val productName = ProductName(locale=locale,name=name,productId=productId)
+                val productName = ProductName(
+                    locale = locale,
+                    name = name,
+                    productId = productId
+                )
                 product.productNames.add(productName)
             }
             products.add(product)
@@ -143,7 +151,7 @@ class SQLiteDataHelper(private val context:Context){
     }
 
     private fun insertCategories(db: SQLiteDatabase){
-        val categories = SQLiteDataHelper.getInstance(context).getCategories()
+        val categories = getCategories()
         categories.forEach { category ->
 
             db.execSQL(
@@ -161,7 +169,7 @@ class SQLiteDataHelper(private val context:Context){
     }
 
     private fun insertProducts(db: SQLiteDatabase){
-        val products = SQLiteDataHelper.getInstance(context).getProducts()
+        val products = getProducts()
         products.forEach { product ->
             db.execSQL(
                 INSERT_PRODUCT_TEMPLATE.format(

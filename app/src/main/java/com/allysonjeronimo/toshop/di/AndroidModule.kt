@@ -2,16 +2,16 @@ package com.allysonjeronimo.toshop.di
 
 import com.allysonjeronimo.toshop.legacy.facade.ToShopFacadeImpl
 import com.allysonjeronimo.toshop.legacy.facade.interfaces.ToShopFacade
-import com.allysonjeronimo.toshop.view.categories.CategoriesDialogContract
-import com.allysonjeronimo.toshop.view.categories.CategoriesDialogPresenter
-import com.allysonjeronimo.toshop.view.itemform.ItemFormContract
-import com.allysonjeronimo.toshop.view.itemform.ItemFormPresenter
-import com.allysonjeronimo.toshop.view.items.ItemsContract
-import com.allysonjeronimo.toshop.view.items.ItemsPresenter
-import com.allysonjeronimo.toshop.view.shoppinglistform.ShoppingListFormContract
-import com.allysonjeronimo.toshop.view.shoppinglistform.ShoppingListFormPresenter
-import com.allysonjeronimo.toshop.view.shoppinglists.ShoppingListsContract
-import com.allysonjeronimo.toshop.view.shoppinglists.ShoppingListsPresenter
+import com.allysonjeronimo.toshop.ui.categories.CategoriesDialogContract
+import com.allysonjeronimo.toshop.ui.categories.CategoriesDialogPresenter
+import com.allysonjeronimo.toshop.ui.itemform.ItemFormContract
+import com.allysonjeronimo.toshop.ui.itemform.ItemFormPresenter
+import com.allysonjeronimo.toshop.ui.items.ItemsContract
+import com.allysonjeronimo.toshop.ui.items.ItemsPresenter
+import com.allysonjeronimo.toshop.ui.shoppinglistform.ShoppingListFormContract
+import com.allysonjeronimo.toshop.ui.shoppinglistform.ShoppingListFormPresenter
+import com.allysonjeronimo.toshop.ui.shoppinglists.ShoppingListsContract
+import com.allysonjeronimo.toshop.ui.shoppinglists.ShoppingListsPresenter
 import org.koin.dsl.module.module
 
 val viewModule = module{
@@ -53,5 +53,5 @@ val viewModule = module{
 }
 
 val modelModule = module{
-    single{ToShopFacadeImpl(context = get()) as ToShopFacade}
+    single{ ToShopFacadeImpl(context = get()) as ToShopFacade }
 }

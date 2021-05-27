@@ -1,9 +1,10 @@
 package com.allysonjeronimo.toshop.legacy.entities
 
 import android.os.Parcelable
-import com.allysonjeronimo.toshop.legacy.utils.toCurrency
 import kotlinx.android.parcel.Parcelize
 import java.util.*
+import com.allysonjeronimo.toshop.common.extensions.toCurrency
+
 
 @Parcelize
 data class Item(

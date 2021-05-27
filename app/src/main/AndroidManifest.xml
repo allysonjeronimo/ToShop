@@ -11,64 +11,64 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".view.preferences.PreferencesActivity"
+        <activity android:name=".ui.preferences.PreferencesActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".view.shoppinglists.ShoppingListsActivity"
+            android:parentActivityName=".ui.shoppinglists.ShoppingListsActivity"
             android:screenOrientation="portrait"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.shoppinglists.ShoppingListsActivity" />
+                android:value=".ui.shoppinglists.ShoppingListsActivity" />
         </activity>
 
-        <activity android:name=".view.about.AboutActivity"
+        <activity android:name=".ui.about.AboutActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".view.shoppinglists.ShoppingListsActivity"
+            android:parentActivityName=".ui.shoppinglists.ShoppingListsActivity"
             android:screenOrientation="portrait"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.shoppinglists.ShoppingListsActivity" />
+                android:value=".ui.shoppinglists.ShoppingListsActivity" />
         </activity>
         <activity
-            android:name=".view.itemform.ItemFormActivity"
-            android:parentActivityName=".view.items.ItemsActivity"
+            android:name=".ui.itemform.ItemFormActivity"
+            android:parentActivityName=".ui.items.ItemsActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.items.ItemsActivity" />
+                android:value=".ui.items.ItemsActivity" />
         </activity>
         <activity
-            android:name=".view.items.ItemsActivity"
+            android:name=".ui.items.ItemsActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".view.shoppinglists.ShoppingListsActivity"
+            android:parentActivityName=".ui.shoppinglists.ShoppingListsActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.shoppinglists.ShoppingListsActivity" />
+                android:value=".ui.shoppinglists.ShoppingListsActivity" />
         </activity>
         <activity
-            android:name=".view.shoppinglistform.ShoppingListFormActivity"
-            android:parentActivityName=".view.shoppinglists.ShoppingListsActivity"
+            android:name=".ui.shoppinglistform.ShoppingListFormActivity"
+            android:parentActivityName=".ui.shoppinglists.ShoppingListsActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.shoppinglists.ShoppingListsActivity" />
+                android:value=".ui.shoppinglists.ShoppingListsActivity" />
         </activity>
         <activity
-            android:name=".view.shoppinglists.ShoppingListsActivity"
+            android:name=".ui.shoppinglists.ShoppingListsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MainTheme"
-            android:parentActivityName=".view.splash.SplashActivity"
+            android:parentActivityName=".ui.splash.SplashActivity"
             android:launchMode="singleTop"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.splash.SplashActivity" />
+                android:value=".ui.splash.SplashActivity" />
         </activity>
         <activity
-            android:name=".view.splash.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen"
             >

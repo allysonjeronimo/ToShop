@@ -1,0 +1,38 @@
+ext{
+    kotlin_version = "1.4.31"
+    recycler_view_version = "1.1.0"
+    card_view_version = "1.0.0"
+    material_design_version = "1.0.0"
+    room_version = "2.2.6"
+    coroutines_version = "1.4.2"
+    junit_version = "4.13.2"
+    arch_test_version = "2.1.0"
+    mockk_version = "1.10.5"
+    test_runner_version = "1.1.2"
+    koin_version = "1.0.2"
+    preference_version = "1.1.1"
+    lifecycle_extensions_version = "2.2.0"
+    lifecycle_viewmodel_version = "2.3.0"
+    constraint_layout_version = "2.0.4"
+
+
+    dependencies = [
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            recyclerView: "androidx.recyclerview:recyclerview:$recycler_view_version",
+            cardView: "androidx.cardview:cardview:$card_view_version",
+            materialDesign: "com.google.android.material:material:$material_design_version",
+            room: "androidx.room:room-ktx:$room_version",
+            roomRuntime: "androidx.room:room-runtime:$room_version",
+            roomCompiler: "androidx.room:room-compiler:$room_version",
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            junit: "junit:junit:$junit_version",
+            archTest: "androidx.arch.core:core-testing:$arch_test_version",
+            mockK: "io.mockk:mockk:$mockk_version",
+            testRunner: "",
+            koin: "",
+            preference: "",
+            lifecycleExtensions: "",
+            lifecycleViewModel: ""
+    ]
+}

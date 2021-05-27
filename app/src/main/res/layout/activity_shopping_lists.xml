@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".view.shoppinglists.ShoppingListsActivity">
+    tools:context=".ui.shoppinglists.ShoppingListsActivity">
 
     <include layout="@layout/content_shopping_lists"/>
 
