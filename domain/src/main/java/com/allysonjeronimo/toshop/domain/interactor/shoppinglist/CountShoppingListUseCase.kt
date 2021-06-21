@@ -2,9 +2,15 @@ package com.allysonjeronimo.toshop.domain.interactor.shoppinglist
 
 import com.allysonjeronimo.toshop.domain.repository.ShoppingListRepository
 
-class CountShoppingListUseCase(private val repository: ShoppingListRepository) {
+class CountShoppingList(
+    private val repository: ShoppingListRepository
+    ) : CountShoppingListUseCase{
 
-    suspend fun execute() : Int{
+    override suspend fun execute() : Int{
         return repository.count()
     }
+}
+
+interface CountShoppingListUseCase{
+    suspend fun execute() : Int
 }

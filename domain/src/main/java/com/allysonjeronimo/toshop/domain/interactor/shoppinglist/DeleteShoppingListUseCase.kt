@@ -2,9 +2,15 @@ package com.allysonjeronimo.toshop.domain.interactor.shoppinglist
 
 import com.allysonjeronimo.toshop.domain.repository.ShoppingListRepository
 
-class DeleteShoppingListUseCase(private val repository: ShoppingListRepository) {
+class DeleteShoppingList(
+    private val repository: ShoppingListRepository
+    ) : DeleteShoppingListUseCase{
 
-    suspend fun execute(id:Long){
+    override suspend fun execute(id:Long){
         repository.delete(id)
     }
+}
+
+interface DeleteShoppingListUseCase{
+    suspend fun execute(id:Long)
 }

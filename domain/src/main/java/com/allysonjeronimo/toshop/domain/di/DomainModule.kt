@@ -1,7 +1,9 @@
 package com.allysonjeronimo.toshop.domain.di
 
+import com.allysonjeronimo.toshop.domain.interactor.category.FindAllCategories
 import com.allysonjeronimo.toshop.domain.interactor.category.FindAllCategoriesUseCase
 import com.allysonjeronimo.toshop.domain.interactor.item.*
+import com.allysonjeronimo.toshop.domain.interactor.product.SearchProducts
 import com.allysonjeronimo.toshop.domain.interactor.product.SearchProductsUseCase
 import com.allysonjeronimo.toshop.domain.interactor.shoppinglist.*
 import org.koin.dsl.module.module
@@ -9,45 +11,48 @@ import org.koin.dsl.module.module
 val domainModule = module{
     // Category
     factory {
-        FindAllCategoriesUseCase(repository = get())
+        FindAllCategories(repository = get()) as FindAllCategoriesUseCase
     }
+
     // Item
     factory {
-        CheckItemUseCase(repository = get())
+        CheckItems(repository = get()) as CheckItemsUseCase
     }
     factory{
-        CountItemsByShoppingListUseCase(repository = get())
+        CountItemsByShoppingList(repository = get()) as CountItemsByShoppingListUseCase
     }
     factory{
-        DeleteItemByShoppingListUseCase(repository = get())
+        DeleteItemsByShoppingList(repository = get()) as DeleteItemsByShoppingListUseCase
     }
     factory{
-        DeleteItemUseCase(repository = get())
+        DeleteItem(repository = get()) as DeleteItemUseCase
     }
     factory{
-        FindItemsByShoppingListUseCase(repository = get())
+        FindItemsByShoppingList(repository = get()) as FindItemsByShoppingListUseCase
     }
     factory{
-        SaveItemUseCase(repository = get())
+        SaveItem(repository = get()) as SaveItemUseCase
     }
+
     // Product
     factory{
-        SearchProductsUseCase(repository = get())
+        SearchProducts(repository = get()) as SearchProductsUseCase
     }
+
     // Shopping List
     factory{
-        CountShoppingListUseCase(repository = get())
+        CountShoppingList(repository = get()) as CountShoppingListUseCase
     }
     factory{
-        DeleteAllShoppingListsUseCase(repository = get())
+        DeleteAllShoppingLists(repository = get()) as DeleteAllShoppingListsUseCase
     }
     factory{
-        DeleteShoppingListUseCase(repository = get())
+        DeleteShoppingList(repository = get()) as DeleteShoppingListUseCase
     }
     factory{
-        SaveShoppingListUseCase(repository = get())
+        SaveShoppingList(repository = get()) as SaveShoppingListUseCase
     }
     factory{
-        SearchShoppingListsUseCase(repository = get())
+        SearchShoppingLists(repository = get()) as SearchShoppingListsUseCase
     }
 }
