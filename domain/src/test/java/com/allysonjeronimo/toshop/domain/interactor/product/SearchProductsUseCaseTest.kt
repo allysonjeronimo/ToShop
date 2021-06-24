@@ -21,7 +21,7 @@ class SearchProductsUseCaseTest {
     }
 
     @Test
-    fun searchProductsUseCase_should_call_search() = runBlocking{
+    fun searchProducts_should_call_search() = runBlocking{
         coEvery {
             repository.search(SEARCH_TERM, LOCALE)
         } returns dummyProductList
