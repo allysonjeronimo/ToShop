@@ -13,13 +13,16 @@ class DeleteAllShoppingListsUseCaseTest {
     private val useCase:DeleteAllShoppingListsUseCase = DeleteAllShoppingLists(repository)
 
     @Test
-    fun deleteAllShoppingLists_should_call_deleteAll() = runBlocking{
+    fun deleteAllShoppingLists_whenExecute_shouldCallDeleteAll() = runBlocking{
+        // Given
         coEvery {
             repository.deleteAll()
         } returns Unit
 
+        // When
         useCase.execute()
 
+        // Then
         coVerify {
             repository.deleteAll()
         }

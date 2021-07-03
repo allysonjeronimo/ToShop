@@ -16,13 +16,16 @@ class SaveShoppingListUseCaseTest {
     private val dummyShoppingList = ShoppingListEntityFactory.dummyShoppingList()
 
     @Test
-    fun saveShoppingList_should_call_save() = runBlocking{
+    fun saveShoppingList_whenExecute_shouldCallSave() = runBlocking{
+        // Given
         coEvery {
             repository.save(any())
         } returns Unit
 
+        // When
         useCase.execute(dummyShoppingList)
 
+        // Then
         coVerify {
             repository.save(dummyShoppingList)
         }

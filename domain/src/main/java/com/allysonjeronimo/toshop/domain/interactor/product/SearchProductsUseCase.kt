@@ -7,8 +7,10 @@ class SearchProducts(
     private val repository: ProductRepository
     ) : SearchProductsUseCase{
 
-    override suspend fun execute(term:String,locale:String) : List<Product>{
-        return repository.search(term, locale)
+    override suspend fun execute(term:String,locale:String) : List<Product> = try{
+        repository.search(term, locale)
+    }catch(e:Exception){
+        listOf()
     }
 }
 

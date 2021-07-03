@@ -17,13 +17,14 @@ class DeleteItemUseCaseTest {
     }
 
     @Test
-    fun deleteItem_should_call_delete() = runBlocking{
+    fun deleteItem_whenExecute_shouldCallDelete() = runBlocking{
+        // Given
         coEvery {
             repository.delete(any())
         } returns Unit
-
+        // When
         useCase.execute(ITEM_ID)
-
+        // Then
         coVerify {
             repository.delete(ITEM_ID)
         }

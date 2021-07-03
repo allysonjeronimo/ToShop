@@ -7,8 +7,10 @@ class FindItemsByShoppingList(
     private val repository: ItemRepository
     ) : FindItemsByShoppingListUseCase{
 
-    override suspend fun execute(shoppingListId:Long) : List<Item>{
-        return repository.findByShoppingList(shoppingListId)
+    override suspend fun execute(shoppingListId:Long) : List<Item> = try{
+        repository.findByShoppingList(shoppingListId)
+    }catch (e:Exception){
+        listOf()
     }
 }
 

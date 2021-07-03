@@ -19,7 +19,7 @@ class CheckItemsUseCaseTest {
     }
 
     @Test
-    fun checkItems_should_call_updatePurchasedByShoppingList() = runBlocking{
+    fun checkItems_whenExecute_shouldCallUpdatePurchasedByShoppingList() = runBlocking{
         // Given
         coEvery {
             repository.updatePurchasedByShoppingList(ITEM_CHECKED, SHOPPING_LIST_ID)

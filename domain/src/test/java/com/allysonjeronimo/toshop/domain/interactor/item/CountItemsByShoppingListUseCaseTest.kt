@@ -20,13 +20,16 @@ class CountItemsByShoppingListUseCaseTest {
     }
 
     @Test
-    fun countItemsByShoppingList_should_call_countByShoppingList() = runBlocking {
+    fun countItemsByShoppingList_whenExecute_shouldCallCountByShoppingList() = runBlocking {
+        // Given
         coEvery {
             repository.countByShoppingList(SHOPPING_LIST_ID)
         } returns COUNT
 
+        // When
         val count = useCase.execute(SHOPPING_LIST_ID)
 
+        // Then
         coVerify {
             repository.countByShoppingList(SHOPPING_LIST_ID)
         }

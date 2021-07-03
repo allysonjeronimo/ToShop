@@ -21,14 +21,35 @@ class SearchShoppingListsUseCaseTest {
     }
 
     @Test
-    fun searchShoppingLists_should_call_search() = runBlocking{
+    fun searchShoppingLists_onSuccessWithData_shouldReturnData() = runBlocking{
+        // Given
         coEvery {
             repository.search(any())
         } returns dummyShoppingListsList
 
+        // When
         val list = useCase.execute(SEARCH_TERM)
 
-        assertEquals(list, dummyShoppingListsList)
+        // Then
+        assertEquals(dummyShoppingListsList.size, list.size)
+
+        coVerify {
+            repository.search(SEARCH_TERM)
+        }
+    }
+
+    @Test
+    fun searchShoppingLists_onError_shouldNotReturnData() = runBlocking{
+        // Given
+        coEvery {
+            repository.search(any())
+        } throws Exception()
+
+        // When
+        val list = useCase.execute(SEARCH_TERM)
+
+        // Then
+        assertEquals(0, list.size)
 
         coVerify {
             repository.search(SEARCH_TERM)

@@ -20,17 +20,32 @@ class FindItemsByShoppingListUseCaseTest {
     }
 
     @Test
-    fun findItemsByShoppingList_should_call_() = runBlocking{
+    fun findItemsByShoppingList_onSuccessWithData_shouldReturnData() = runBlocking{
+        // Given
         coEvery {
             repository.findByShoppingList(any())
         } returns dummyItemsList
-
+        // When
         val list = useCase.execute(SHOPPING_LIST_ID)
-
+        // Then
         coVerify {
             repository.findByShoppingList(SHOPPING_LIST_ID)
         }
+        assertEquals(dummyItemsList.size, list.size)
+    }
 
-        assertEquals(list, dummyItemsList)
+    @Test
+    fun findItemsByShoppingList_onError_shouldNotReturnData() = runBlocking {
+        // Given
+        coEvery {
+            repository.findByShoppingList(any())
+        } throws Exception()
+        // When
+        val list = useCase.execute(SHOPPING_LIST_ID)
+        // Then
+        coVerify {
+            repository.findByShoppingList(SHOPPING_LIST_ID)
+        }
+        assertEquals(0, list.size)
     }
 }

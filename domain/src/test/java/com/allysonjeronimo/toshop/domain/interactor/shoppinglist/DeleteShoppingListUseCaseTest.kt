@@ -17,13 +17,16 @@ class DeleteShoppingListUseCaseTest {
     }
 
     @Test
-    fun deleteShoppingList_should_call_delete() = runBlocking{
+    fun deleteShoppingList_whenExecute_shouldCallDelete() = runBlocking{
+        // Given
         coEvery {
             repository.delete(any())
         } returns Unit
 
+        // When
         useCase.execute(SHOPPING_LIST_ID)
 
+        // When
         coVerify {
             repository.delete(SHOPPING_LIST_ID)
         }

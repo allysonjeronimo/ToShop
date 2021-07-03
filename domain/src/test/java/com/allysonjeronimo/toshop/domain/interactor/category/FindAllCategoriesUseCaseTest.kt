@@ -17,7 +17,7 @@ class FindAllCategoriesUseCaseTest {
     private val dummyCategoryList = CategoryEntityFactory.dummyCategoryList()
 
     @Test
-    fun findAllCategories_return_list_with_success() = runBlocking{
+    fun findAllCategories_onSuccessWithData_shouldReturnData() = runBlocking{
         // Given
         coEvery {
             repository.findAll("")
@@ -27,18 +27,19 @@ class FindAllCategoriesUseCaseTest {
         val list = useCase.execute("")
 
         // Then
-        assertEquals(list.size, dummyCategoryList.size)
+        assertEquals(dummyCategoryList.size, list.size)
     }
 
     @Test
-    fun findAllCategories_return_exception() = runBlocking {
+    fun findAllCategories_onError_shouldNotReturnData() = runBlocking {
+        // Given
         coEvery {
             repository.findAll("")
         } throws Exception()
-
+        // When
         val list = useCase.execute("")
-
-        assertEquals(list.size, 0)
+        // Then
+        assertEquals(0, list.size)
     }
 
 }
